@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ECS</RootNamespace>
     <AssemblyName>ECS</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +31,7 @@
     <Reference Include="nunit.framework">
       <HintPath>packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -39,6 +40,7 @@
     <Folder Include="Component\" />
     <Folder Include="Entity\" />
     <Folder Include="Component\ComponentTypes\" />
+    <Folder Include="Group\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -47,6 +49,7 @@
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Component\ComponentTypes\FooComponent.cs" />
     <Compile Include="Component\ComponentTypes\BarComponent.cs" />
+    <Compile Include="Group\Group.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
