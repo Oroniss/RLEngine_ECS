@@ -1,1 +1,10 @@
-﻿
+﻿10/14/18 - Added Component class
+10/14/18 - Added Entity class
+10/14/18 - Added Group class
+
+Remaining tasks.
+
+Add a System class.
+Add a Factory class.
+Add an ECS serialiser.
+Add unit tests for each piece.
