@@ -42,6 +42,8 @@
     <Folder Include="Entity\" />
     <Folder Include="Component\ComponentTypes\" />
     <Folder Include="Group\" />
+    <Folder Include="GameSystem\" />
+    <Folder Include="Event\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -51,6 +53,9 @@
     <Compile Include="Component\ComponentTypes\FooComponent.cs" />
     <Compile Include="Component\ComponentTypes\BarComponent.cs" />
     <Compile Include="Group\Group.cs" />
+    <Compile Include="GameSystem\GameSystem.cs" />
+    <Compile Include="Event\GameEvent.cs" />
+    <Compile Include="Event\EventType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
