@@ -7,7 +7,7 @@ namespace ECS.Entities
 	public static class Entity
 	{
 		static int maxEntityId = 0;
-		static Dictionary<int, Component[]> _entities = new Dictionary<int, Component[]> { };
+		static SortedDictionary<int, Component[]> _entities = new SortedDictionary<int, Component[]> { };
 
 		static int numberOfComponents = Enum.GetValues(typeof(ComponentType)).Length;
 		static Type[] _types = new Type[] {typeof(FooComponent), typeof(BarComponent) };
