@@ -2,9 +2,7 @@
   <MonoDevelop.Ide.ItemProperties.ECS PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
     <Files>
-      <File FileName="Component/Component.cs" Line="22" Column="4" />
-      <File FileName="MainProgram.cs" Line="12" Column="1" />
-      <File FileName="Entity/Entity.cs" Line="17" Column="41" />
+      <File FileName="Group/Group.cs" Line="67" Column="1" />
       <File FileName="ECS Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
