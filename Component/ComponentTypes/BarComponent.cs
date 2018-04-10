@@ -1,10 +1,21 @@
 ﻿using System;
-namespace ECS
+
+namespace ECS.Components
 {
-	public class BarComponent
+	[Serializable]
+	public class BarComponent:Component
 	{
-		public BarComponent()
+		string[] _arrayOfStuff;
+
+		public BarComponent(string[] arrayOfStuff)
+			:base(ComponentType.Bar)
 		{
+			_arrayOfStuff = arrayOfStuff;
+		}
+
+		public string[] ArrayOfStuff
+		{
+			get { return _arrayOfStuff; }
 		}
 	}
 }
