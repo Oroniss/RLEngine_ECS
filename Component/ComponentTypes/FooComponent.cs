@@ -1,10 +1,28 @@
 ﻿using System;
-namespace ECS
+
+namespace ECS.Components
 {
-	public class EmptyClass
+	[Serializable]
+	public class FooComponent:Component
 	{
-		public EmptyClass()
+		int _aNumber;
+		string _someText;
+
+		public FooComponent(int aNumber, string someText)
+			:base(ComponentType.Foo)
 		{
+			_aNumber = aNumber;
+			_someText = someText;
+		}
+
+		public int ANumber
+		{
+			get { return _aNumber; }
+		}
+
+		public string SomeText
+		{
+			get { return _someText; }
 		}
 	}
 }
