@@ -1,9 +1,19 @@
 ﻿using System;
-namespace ECS
+
+namespace ECS.GameSystems
 {
-	public class System
+	[Serializable]
+	public abstract class GameSystem
 	{
-		public System()
+		// Groups
+		// Events
+
+		public GameSystem()
+		{
+		}
+
+		// Anything that the system should do every turn.
+		public virtual void Update(int currentTime)
 		{
 		}
 	}
