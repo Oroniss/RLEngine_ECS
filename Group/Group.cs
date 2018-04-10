@@ -35,6 +35,16 @@ namespace ECS.Groups
 			_groupMembers = new List<int>();
 		}
 
+		int[] GroupMembers
+		{
+			get {
+				int[] returnArray = new int[_groupMembers.Count];
+				for (int i = 0; i < _groupMembers.Count; i++)
+					returnArray[i] = _groupMembers[i];
+				return returnArray;
+			}
+		}
+
 		void AddComponent(int entityId, ComponentType componentType)
 		{
 			if (!_entities.ContainsKey(entityId))
@@ -86,6 +96,14 @@ namespace ECS.Groups
 		{
 			for (int i = 0; i<components[componentType].Count; i++)
 				groups[components[componentType][i]].RemoveComponent(entityId, componentType);
+		}
+
+		public static int[] GetGroupMembers(string groupName)
+		{
+			if (groups.ContainsKey(groupName))
+				return groups[groupName].GroupMembers;
+			Console.WriteLine(string.Format("Queried for unknown group name: {0}", groupName));
+			return new int[0];
 		}
 
 		static void InitialiseGroups()
