@@ -55,6 +55,8 @@ namespace ECS.Entities
 				if (_entities[entityId][(int)component.componentType] != null)
 					RemoveComponent(entityId, component.componentType);
 				_entities[entityId][(int)component.componentType] = component;
+
+				Groups.Group.AddComponentEvent(entityId, component.componentType);
 			}
 			else
 				Console.WriteLine(string.Format("Tried to add component to unknown Entity ID: {0}", entityId));
@@ -63,7 +65,11 @@ namespace ECS.Entities
 		public static void RemoveComponent(int entityId, ComponentType componentType)
 		{
 			if (_entities.ContainsKey(entityId))
+			{
 				_entities[entityId][(int)componentType] = null;
+
+				Groups.Group.RemoveComponentEvent(entityId, componentType);
+			}
 			else
 				Console.WriteLine(string.Format("Unknown Entity ID: {0}", entityId));
 		}
