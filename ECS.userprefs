@@ -1,6 +1,13 @@
 ﻿<Properties StartupConfiguration="{0170BEB2-FD94-4E46-8F67-C6C344DC453B}|Default">
   <MonoDevelop.Ide.ItemProperties.ECS PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
+    <Files>
+      <File FileName="Component/Component.cs" Line="22" Column="4" />
+      <File FileName="MainProgram.cs" Line="12" Column="1" />
+      <File FileName="Entity/Entity.cs" Line="17" Column="41" />
+      <File FileName="ECS Status" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
