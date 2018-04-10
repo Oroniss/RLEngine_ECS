@@ -35,5 +35,18 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Component\" />
+    <Folder Include="Entity\" />
+    <Folder Include="Component\ComponentTypes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\Component.cs" />
+    <Compile Include="MainProgram.cs" />
+    <Compile Include="Component\ComponentType.cs" />
+    <Compile Include="Entity\Entity.cs" />
+    <Compile Include="Component\ComponentTypes\FooComponent.cs" />
+    <Compile Include="Component\ComponentTypes\BarComponent.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
