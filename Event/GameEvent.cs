@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ECS.GameSystems;
 
 namespace ECS.GameEvents
 {
@@ -30,6 +31,11 @@ namespace ECS.GameEvents
 				}
 			}
 
+		}
+
+		public static void RegisterSystem(GameSystem gameSystem, EventType[] watchedEvents)
+		{
+			
 		}
 	}
 }
