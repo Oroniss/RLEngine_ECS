@@ -44,6 +44,7 @@
     <Folder Include="Group\" />
     <Folder Include="GameSystem\" />
     <Folder Include="Event\" />
+    <Folder Include="GameSystem\SystemTypes\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
