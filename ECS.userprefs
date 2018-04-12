@@ -2,9 +2,8 @@
   <MonoDevelop.Ide.ItemProperties.ECS PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
     <Files>
-      <File FileName="Comments and Plan.txt" Line="6" Column="47" />
-      <File FileName="GameSystem/GameSystem.cs" Line="38" Column="45" />
-      <File FileName="Event/GameEvent.cs" Line="38" Column="4" />
+      <File FileName="Comments and Plan.txt" Line="12" Column="52" />
+      <File FileName="Event/GameEvent.cs" Line="26" Column="6" />
       <File FileName="ECS Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
