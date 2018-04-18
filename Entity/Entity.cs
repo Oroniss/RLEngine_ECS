@@ -6,6 +6,7 @@ namespace ECS.Entities
 {
 	public static class Entity
 	{
+		static List<int> _unusedEntityIds = new List<int>();
 		static int maxEntityId = 0;
 		static SortedDictionary<int, Component[]> _entities = new SortedDictionary<int, Component[]> { };
 
@@ -26,10 +27,19 @@ namespace ECS.Entities
 
 		public static int CreateEntity()
 		{
-			int entityID = maxEntityId;
-			maxEntityId++;
-			_entities[entityID] = new Component[numberOfComponents];
-			return entityID;
+			if (_unusedEntityIds.Count == 0)
+			{
+				int entityID = maxEntityId;
+				maxEntityId++;
+				_entities[entityID] = new Component[numberOfComponents];
+				return entityID;
+			}
+			else
+			{
+				int entityID = _unusedEntityIds[0];
+				_unusedEntityIds.RemoveAt(0);
+				return entityID;
+			}
 		}
 
 		public static void DestroyEntity(int entityId)
@@ -46,6 +56,7 @@ namespace ECS.Entities
 
 				_entities.Remove(entityId);
 			}
+			_unusedEntityIds.Add(entityId);
 		}
 
 		public static void AddComponent(int entityId, Component component)
