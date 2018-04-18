@@ -3,7 +3,7 @@ using ECS.GameSystems;
 
 namespace ECS.GameEvents
 {
-	public class GameEvent
+	public abstract class GameEvent
 	{
 		static GameEvent[] _recentEvents;
 		static int _eventIndex;
@@ -13,9 +13,7 @@ namespace ECS.GameEvents
 		{
 		}
 
-
-
-		public static void AddEvent(GameEvent gameEvent)
+		protected static void AddEvent(GameEvent gameEvent)
 		{
 			_recentEvents[_eventIndex] = gameEvent;
 			_eventIndex = (_eventIndex + 1) % _recentEvents.Length;
