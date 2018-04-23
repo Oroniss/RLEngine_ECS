@@ -1,7 +1,8 @@
-﻿using System;
-namespace ECS
+﻿namespace ECS.Entities
 {
 	public enum Trait
 	{
+		BlockLOS,
+		BlockMove
 	}
 }
