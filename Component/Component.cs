@@ -7,20 +7,25 @@ namespace ECS.Components
 	{
 		static long maxComponentId = 1;
 
-
 		ComponentType _componentType;
-		long _id;
+		long _componentId;
+		int _entityId;
 
-		public Component(ComponentType componentType)
+		public Component(ComponentType componentType, int entityId)
 		{
 			_componentType = componentType;
-			_id = maxComponentId;
+			_componentId = maxComponentId;
 			maxComponentId++;
 		}
 
 		public long ComponentId
 		{
-			get { return _id; }
+			get { return _componentId; }
+		}
+
+		public int EntityId
+		{
+			get { return _entityId; }
 		}
 
 		public ComponentType componentType
