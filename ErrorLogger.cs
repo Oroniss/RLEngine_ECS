@@ -1,10 +1,15 @@
-﻿using System;
-namespace ECS
+﻿namespace ECS
 {
-	public class ErrorLogger
+	public static class ErrorLogger
 	{
-		public ErrorLogger()
+		public static void AddDebugText(string debugText)
 		{
+			AddDebugText(debugText, "White");
+		}
+
+		public static void AddDebugText(string debugText, string color)
+		{
+			
 		}
 	}
 }
