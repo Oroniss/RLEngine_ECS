@@ -50,13 +50,14 @@
     <Compile Include="MainProgram.cs" />
     <Compile Include="Component\ComponentType.cs" />
     <Compile Include="Entity\Entity.cs" />
-    <Compile Include="Component\ComponentTypes\FooComponent.cs" />
-    <Compile Include="Component\ComponentTypes\BarComponent.cs" />
     <Compile Include="GameSystem\GameSystem.cs" />
     <Compile Include="Event\GameEvent.cs" />
     <Compile Include="Event\EventType.cs" />
     <Compile Include="Entity\Trait.cs" />
     <Compile Include="ErrorLogger.cs" />
+    <Compile Include="Component\ComponentTypes\PositionComponent.cs" />
+    <Compile Include="Component\ComponentTypes\ForegroundComponent.cs" />
+    <Compile Include="Component\ComponentTypes\BackgroundComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
