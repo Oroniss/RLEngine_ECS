@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace ECS.Components
+﻿namespace ECS.Components
 {
 	public enum ComponentType
 	{
-		Foo = 0,
-		Bar = 1,
-		Position = 2
+		Position = 0,
+		Foreground = 1,
+		Background = 2
 	}
 }
