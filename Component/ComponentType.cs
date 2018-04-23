@@ -5,6 +5,7 @@ namespace ECS.Components
 	public enum ComponentType
 	{
 		Foo = 0,
-		Bar = 1
+		Bar = 1,
+		Position = 2
 	}
 }
