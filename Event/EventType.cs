@@ -2,7 +2,8 @@ namespace ECS.GameEvents
 {
 	public enum EventType
 	{
-		ActorDamage = 0,
-		ActorDeath = 1
+		CreateEntity = 0,
+		DestroyEntity = 1,
+		EntityMovement = 2
 	}
 }
