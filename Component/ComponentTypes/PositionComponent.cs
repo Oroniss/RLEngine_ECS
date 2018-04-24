@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ECS.Components
 {
@@ -40,7 +40,7 @@ namespace ECS.Components
 			_xLoc = newX;
 			_yLoc = newY;
 
-			GameEvents.MovementEvent.NewMovementEvent(EntityId, originalX, originalY, newX, newY);
+			GameEvents.MoveEntityEvent.NewMovementEvent(EntityId, originalX, originalY, newX, newY);
 		}
 	}
 }
