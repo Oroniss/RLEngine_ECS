@@ -25,20 +25,9 @@ namespace ECS.GameSystems
 			GameEvent.RegisterSystem(this, _watchedEvents);
 		}
 
-		// Anything that the system should do every turn.
-		protected virtual void Update(int currentTime)
-		{
-		}
-
 		// Any events the system should watch for.
 		public virtual void ProcessEvent(GameEvent gameEvent)
 		{
-		}
-
-		public static void UpdateSystems(int currentTime)
-		{
-			foreach (GameSystem system in systemsToUpdate)
-				system.Update(currentTime);
 		}
 
 		public static GameSystem GetSystem(string name)
