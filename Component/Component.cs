@@ -16,6 +16,8 @@ namespace ECS.Components
 			_componentType = componentType;
 			_componentId = maxComponentId;
 			maxComponentId++;
+
+			_entityId = entityId;
 		}
 
 		public long ComponentId
