@@ -4,6 +4,6 @@ namespace ECS.GameEvents
 	{
 		CreateEntity = 0,
 		DestroyEntity = 1,
-		EntityMovement = 2
+		MoveEntity = 2
 	}
 }
