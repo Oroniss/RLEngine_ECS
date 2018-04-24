@@ -13,7 +13,8 @@ namespace ECS.Entities
 		static SortedDictionary<int, int[]> traits = new SortedDictionary<int, int[]> { };
 
 		static readonly int numberOfComponents = Enum.GetValues(typeof(ComponentType)).Length;
-		static readonly Type[] _types = { typeof(FooComponent), typeof(BarComponent) };
+		static readonly Type[] _types = { typeof(PositionComponent), typeof(ForegroundComponent), 
+			typeof(BackgroundComponent) };
 		static readonly int numberOfTraits = Enum.GetValues(typeof(Trait)).Length;
 
 		public static int CreateEntity()
