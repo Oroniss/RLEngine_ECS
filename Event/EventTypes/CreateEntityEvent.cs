@@ -1,10 +1,27 @@
 ﻿using System;
-namespace ECS
+
+namespace ECS.GameEvents
 {
-	public class CreateEntityEvent
+	[Serializable]
+	public class CreateEntityEvent:GameEvent
 	{
-		public CreateEntityEvent()
+		int _entityId;
+
+		CreateEntityEvent(int entityId)
+			:base(EventType.CreateEntity)
 		{
+			_entityId = entityId;
+		}
+
+		public int EntityId
+		{
+			get { return _entityId; }
+		}
+
+		public static void NewCreateEntityEvent(int entityId)
+		{
+			var newEvent = new CreateEntityEvent(entityId);
+			AddEvent(newEvent);
 		}
 	}
 }
