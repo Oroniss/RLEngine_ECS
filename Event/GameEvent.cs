@@ -4,6 +4,7 @@ using System;
 
 namespace ECS.GameEvents
 {
+	[Serializable]
 	public abstract class GameEvent
 	{
 		static bool setupRequired = true;
@@ -28,21 +29,22 @@ namespace ECS.GameEvents
 
 		protected static void AddEvent(GameEvent gameEvent)
 		{
-			_recentEvents[_eventIndex] = gameEvent;
-			_eventIndex = (_eventIndex + 1) % _recentEvents.Length;
-
 			_eventsToProcess.Add(gameEvent);
+		}
 
-			if (_eventsToProcess.Count == 1)
-			{
+		public static void ProcessEvents()
+		{
 				while (_eventsToProcess.Count > 0)
 				{
 					GameEvent processing = _eventsToProcess[0];
+
+					_recentEvents[_eventIndex] = processing;
+					_eventIndex = (_eventIndex + 1) % _recentEvents.Length;
+
 					foreach (GameSystem system in listeners[processing.EventType])
 						system.ProcessEvent(processing);
 					_eventsToProcess.RemoveAt(0);
 				}
-			}
 		}
 
 		public static void RegisterSystem(GameSystem gameSystem, EventType[] watchedEvents)
