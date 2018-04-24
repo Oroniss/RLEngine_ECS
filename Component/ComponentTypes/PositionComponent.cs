@@ -15,8 +15,6 @@ namespace ECS.Components
 			_xLoc = x;
 			_yLoc = y;
 			_levelName = levelName;
-
-			// Add to PositionSystem
 		}
 
 		public int XLoc
@@ -32,6 +30,17 @@ namespace ECS.Components
 		public string LevelName
 		{
 			get { return _levelName; }
+		}
+
+		public void UpdatePosition(int newX, int newY)
+		{
+			int originalX = _xLoc;
+			int originalY = _yLoc;
+
+			_xLoc = newX;
+			_yLoc = newY;
+
+			GameEvents.MovementEvent.NewMovementEvent(EntityId, originalX, originalY, newX, newY);
 		}
 	}
 }
