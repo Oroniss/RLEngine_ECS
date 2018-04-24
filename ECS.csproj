@@ -44,6 +44,7 @@
     <Folder Include="GameSystem\" />
     <Folder Include="Event\" />
     <Folder Include="GameSystem\SystemTypes\" />
+    <Folder Include="Event\EventTypes\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -58,6 +59,8 @@
     <Compile Include="Component\ComponentTypes\PositionComponent.cs" />
     <Compile Include="Component\ComponentTypes\ForegroundComponent.cs" />
     <Compile Include="Component\ComponentTypes\BackgroundComponent.cs" />
+    <Compile Include="Event\EventTypes\MovementEvent.cs" />
+    <Compile Include="Event\EventTypes\CreateEntityEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
