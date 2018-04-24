@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 namespace ECS.GameEvents
 {
 	[Serializable]
-	public class MovementEvent:GameEvent
+	public class MoveEntityEvent:GameEvent
 	{
 		int _entityId;
 		int _oldX;
@@ -11,8 +11,8 @@ namespace ECS.GameEvents
 		int _newX;
 		int _newY;
 
-		MovementEvent(int entityId, int oldX, int oldY, int newX, int newY)
-			:base(EventType.EntityMovement)
+		MoveEntityEvent(int entityId, int oldX, int oldY, int newX, int newY)
+			:base(EventType.MoveEntity)
 		{
 			_entityId = entityId;
 			_oldX = oldX;
@@ -48,7 +48,7 @@ namespace ECS.GameEvents
 
 		public static void NewMovementEvent(int entityId, int oldX, int oldY, int newX, int newY)
 		{
-			var newEvent = new MovementEvent(entityId, oldX, oldY, newX, newY);
+			var newEvent = new MoveEntityEvent(entityId, oldX, oldY, newX, newY);
 			AddEvent(newEvent);
 		}
 	}
