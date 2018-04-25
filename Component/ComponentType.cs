@@ -4,6 +4,7 @@
 	{
 		Position = 0,
 		Foreground = 1,
-		Background = 2
+		Background = 2,
+		Map = 3
 	}
 }
