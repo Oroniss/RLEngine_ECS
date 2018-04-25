@@ -9,7 +9,9 @@ namespace ECS.Entities
 		static List<int> unusedEntityIds = new List<int>();
 		static int maxEntityId = 0;
 
-		static SortedDictionary<int, Component[]> components = new SortedDictionary<int, Component[]> { };
+		static SortedDictionary<ComponentType, SortedDictionary<int, Component>> components =
+			new SortedDictionary<ComponentType, SortedDictionary<int, Component>>();
+		static SortedDictionary<int, bool[]> hasComponent = new SortedDictionary<int, bool[]> { };
 		static SortedDictionary<int, int[]> traits = new SortedDictionary<int, int[]> { };
 
 		static readonly int numberOfComponents = Enum.GetValues(typeof(ComponentType)).Length;
@@ -32,7 +34,7 @@ namespace ECS.Entities
 				unusedEntityIds.RemoveAt(0);
 			}
 
-			components[entityID] = new Component[numberOfComponents];
+			hasComponent[entityID] = new bool[numberOfComponents];
 			traits[entityID] = new int[numberOfTraits];
 
 			return entityID;
@@ -42,15 +44,15 @@ namespace ECS.Entities
 		{
 			if (IsValidEntityId(entityId))
 			{
-				var componentArray = components[entityId];
+				var componentArray = hasComponent[entityId];
 				var traitArray = traits[entityId];
 
 				for (int i = 0; i < numberOfComponents; i++)
 				{
-					if (componentArray[i] != null)
+					if (componentArray[i])
 						RemoveComponent(entityId, (ComponentType)i);
 				}
-				components.Remove(entityId);
+				hasComponent.Remove(entityId);
 				for (int i = 0; i < numberOfTraits; i++)
 				{
 					while (traitArray[i] > 0)
@@ -66,7 +68,7 @@ namespace ECS.Entities
 
 		public static bool IsValidEntityId(int entityId)
 		{
-			return components.ContainsKey(entityId) && traits.ContainsKey(entityId);
+			return hasComponent.ContainsKey(entityId) && traits.ContainsKey(entityId);
 		}
 
 		public static bool HasComponent(int entityId, ComponentType componentType)
@@ -74,7 +76,7 @@ namespace ECS.Entities
 			if (IsValidEntityId(entityId))
 			{
 				int index = (int)componentType;
-				return components[entityId][index] != null;
+				return hasComponent[entityId][index];
 			}
 			else
 			{
@@ -88,7 +90,7 @@ namespace ECS.Entities
 			if (IsValidEntityId(entityId))
 			{
 				if (HasComponent(entityId, componentType))
-					return components[entityId][(int)componentType];
+					return components[componentType][entityId];
 				else
 				{
 					ErrorLogger.AddDebugText(string.Format("Tried to get non-existant component type: {0} for entity: {1}",
@@ -107,9 +109,10 @@ namespace ECS.Entities
 		{
 			if (IsValidEntityId(entityId))
 			{
-				if (components[entityId][(int)component.componentType] != null)
+				if (hasComponent[entityId][(int)component.componentType])
 					RemoveComponent(entityId, component.componentType);
-				components[entityId][(int)component.componentType] = component;
+				hasComponent[entityId][(int)component.componentType] = true;
+				components[component.componentType][entityId] = component;
 			}
 			else
 				ErrorLogger.AddDebugText(string.Format("Tried to add component to invalid Entity ID: {0}", entityId));
@@ -119,7 +122,14 @@ namespace ECS.Entities
 		{
 			if (IsValidEntityId(entityId))
 			{
-				components[entityId][(int)componentType] = null;
+				if (HasComponent(entityId, componentType))
+				{
+					hasComponent[entityId][(int)componentType] = false;
+					components[componentType].Remove(entityId);
+				}
+				else
+					ErrorLogger.AddDebugText(string.Format("Tried to remove a {0} that wasn't present on entity {1}",
+														   componentType, entityId));
 			}
 			else
 				ErrorLogger.AddDebugText(string.Format("Unknown Entity ID: {0}", entityId));
