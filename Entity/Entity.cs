@@ -14,7 +14,7 @@ namespace ECS.Entities
 
 		static readonly int numberOfComponents = Enum.GetValues(typeof(ComponentType)).Length;
 		static readonly Type[] _types = { typeof(PositionComponent), typeof(ForegroundComponent), 
-			typeof(BackgroundComponent) };
+			typeof(BackgroundComponent), typeof(MapComponent) };
 		static readonly int numberOfTraits = Enum.GetValues(typeof(Trait)).Length;
 
 		public static int CreateEntity()
@@ -80,6 +80,26 @@ namespace ECS.Entities
 			{
 				ErrorLogger.AddDebugText(string.Format("Invalid Entity ID: {0}", entityId));
 				return false;
+			}
+		}
+
+		public static Component GetComponent(int entityId, ComponentType componentType)
+		{
+			if (IsValidEntityId(entityId))
+			{
+				if (HasComponent(entityId, componentType))
+					return components[entityId][(int)componentType];
+				else
+				{
+					ErrorLogger.AddDebugText(string.Format("Tried to get non-existant component type: {0} for entity: {1}",
+														   componentType, entityId));
+					return null;
+				}
+			}
+			else
+			{
+				ErrorLogger.AddDebugText(string.Format("Invalid Entity ID: {0}", entityId));
+				return null;
 			}
 		}
 
