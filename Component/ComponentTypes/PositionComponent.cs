@@ -34,13 +34,8 @@ namespace ECS.Components
 
 		public void UpdatePosition(int newX, int newY)
 		{
-			int originalX = _xLoc;
-			int originalY = _yLoc;
-
 			_xLoc = newX;
 			_yLoc = newY;
-
-			GameEvents.MoveEntityEvent.NewMovementEvent(EntityId, originalX, originalY, newX, newY);
 		}
 	}
 }
