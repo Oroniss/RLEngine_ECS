@@ -63,6 +63,8 @@
     <Compile Include="Event\EventTypes\CreateEntityEvent.cs" />
     <Compile Include="GameSystem\SystemTypes\LevelSystem.cs" />
     <Compile Include="Component\ComponentTypes\MapComponent.cs" />
+    <Compile Include="GameSystem\SystemProvider.cs" />
+    <Compile Include="GameSystem\SystemTypes\MovementSystem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
