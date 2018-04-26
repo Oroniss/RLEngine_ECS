@@ -1,6 +1,5 @@
 ﻿using ECS.GameEvents;
 using ECS.Components;
-using ECS.Entities;
 
 namespace ECS.GameSystems
 {
@@ -14,7 +13,7 @@ namespace ECS.GameSystems
 
 		public bool IsValidMapCoord(int levelId, int x, int y)
 		{
-			var mapComponent = (MapComponent)(Entity.GetComponent(levelId, ComponentType.Map));
+			var mapComponent = (MapComponent)(SystemProvider.EntitySystem.GetComponent(levelId, ComponentType.Map));
 
 			if (mapComponent == null)
 			{
