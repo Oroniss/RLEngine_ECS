@@ -1,4 +1,4 @@
-﻿namespace ECS.Entities
+﻿namespace ECS.Components
 {
 	public enum Trait
 	{
