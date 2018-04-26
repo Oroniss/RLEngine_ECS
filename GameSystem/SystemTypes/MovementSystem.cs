@@ -1,5 +1,4 @@
 ﻿using ECS.GameEvents;
-using ECS.Entities;
 using ECS.Components;
 
 namespace ECS.GameSystems
@@ -15,7 +14,7 @@ namespace ECS.GameSystems
 		{
 			if (SystemProvider.LevelSystem.IsValidMapCoord(levelId, newX, newY))
 			{
-				var positionComponent = (PositionComponent)(Entity.GetComponent(entityId, ComponentType.Position));
+				var positionComponent = (PositionComponent)(SystemProvider.EntitySystem.GetComponent(entityId, ComponentType.Position));
 				positionComponent.UpdatePosition(newX, newY);
 				MoveEntityEvent.NewMovementEvent(entityId, oldX, oldY, newX, newY);
 				return true;
