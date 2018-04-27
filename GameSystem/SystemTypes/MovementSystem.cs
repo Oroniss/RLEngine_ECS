@@ -5,9 +5,7 @@ namespace ECS.GameSystems
 {
 	public class MovementSystem:GameSystem
 	{
-		static EventType[] watchedEvents = {EventType.CreateEntity, EventType.DestroyEntity, EventType.MoveEntity};
-
-		public MovementSystem()
+		public MovementSystem(EventType[] watchedEvents)
 			: base("MovementSystem", watchedEvents) { }
 
 		public bool MoveEntityAttempt(int entityId, int levelId, int oldX, int oldY, int newX, int newY)
