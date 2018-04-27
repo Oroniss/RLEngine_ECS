@@ -44,6 +44,7 @@
     <Folder Include="Event\" />
     <Folder Include="GameSystem\SystemTypes\" />
     <Folder Include="Event\EventTypes\" />
+    <Folder Include="Component\ComponentData\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="GameSystem\SystemTypes\MovementSystem.cs" />
     <Compile Include="GameSystem\SystemTypes\EntitySystem.cs" />
     <Compile Include="Component\Trait.cs" />
+    <Compile Include="Component\ComponentData\ComponentDatabaseConnection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
