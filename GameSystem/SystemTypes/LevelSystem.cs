@@ -5,10 +5,7 @@ namespace ECS.GameSystems
 {
 	public class LevelSystem:GameSystem
 	{
-		static readonly EventType[] watchedEvents = 
-		{EventType.CreateEntity, EventType.DestroyEntity, EventType.MoveEntity};
-
-		public LevelSystem()
+		public LevelSystem(EventType[] watchedEvents)
 			: base("LevelSystem", watchedEvents) { }
 
 		public bool IsValidMapCoord(int levelId, int x, int y)
