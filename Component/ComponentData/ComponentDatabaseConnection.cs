@@ -1,9 +1,15 @@
-﻿using System;
-namespace ECS
+﻿using System.Collections.Generic;
+using System.IO;
+using System;
+using ECS.Components;
+
+namespace ECS.Components
 {
-	public class ComponentDatabase
+	public class ComponentDatabaseConnection
 	{
-		public ComponentDatabase()
+		string _componentDataParentFolder;
+
+		public ComponentDatabaseConnection()
 		{
 		}
 	}
