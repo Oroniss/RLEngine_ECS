@@ -7,8 +7,6 @@ namespace ECS.GameSystems
 {
 	public class EntitySystem:GameSystem
 	{
-		static EventType[] watchedEvents = { };
-
 		List<int> unusedEntityIds = new List<int>();
 		int maxEntityId = 0;
 
@@ -23,10 +21,10 @@ namespace ECS.GameSystems
 		readonly int numberOfTraits = Enum.GetValues(typeof(Trait)).Length;
 
 
-		public EntitySystem()
+		public EntitySystem(EventType[] watchedEvents)
 			: base("EntitySystem", watchedEvents) { }
 
-		public int CreateEntity(string entityName, string levelName, string[] otherParameters)
+		public int CreateEntity(string entityName, string[] otherParameters)
 		{
 			return SetupNewEntity();
 		}
