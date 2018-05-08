@@ -18,16 +18,12 @@
 2/5/18 - Added a data source - just a class that reads from a CSV file for now - easily fixable to go elsewhere though.
 8/5/18 - Added standard constructors to all the component types.
 8/5/18 - Started building the entity factory.
+8/5/18 - Split the factory into its own file - though still a partial class of EntitySystem.
+8/5/18 - Set the database up to fetch trait data as well as component data.
+8/5/18 - Finished the factory method to create new entities.
 
 Remaining tasks.
 
-Revise entity factory - Have the dictionary actually store the combinations of material + entity type, since we will
-likely only need 1 or 2 different types at a time.
-
-Just use csv files - later on write a parser to turn them into data base tables.
-Add an abstract constructor which takes this as an argument.
-
-
-Add an ECS serialiser.
-
 Add unit tests for each piece.
+
+Add serialisation.

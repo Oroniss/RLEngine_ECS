@@ -113,7 +113,8 @@ namespace ECS.Components.ComponentData
 				{
 					for (int i = 1; i < splitLine.Length; i++)
 					{
-						traits.Add(ParseTrait(splitLine[i]));
+						if (splitLine[i] != "")
+							traits.Add(ParseTrait(splitLine[i]));
 					}
 					break;
 				}

@@ -1,0 +1,6 @@
+EntityName,Traits,
+Goblin,BlockMove,
+Kobold,BlockMove,
+Door,BlockMove,BlockLOS
+Wood,,
+Stone Floor,,

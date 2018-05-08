@@ -36,6 +36,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Comments and Plan.txt" />
+    <None Include="Component\ComponentData\ComponentData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Component\ComponentData\TraitData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Component\" />

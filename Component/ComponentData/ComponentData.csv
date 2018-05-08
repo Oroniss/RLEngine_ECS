@@ -1,0 +1,6 @@
+EntityName	ForegroundComponent	Symbol	FgColor	ForegroundDisplayLayer	BackgroundComponent	BgColor	FogColor	BackgroundDisplayLayer	PositionComponent
+Goblin	TRUE	g	Orange	Actor					TRUE
+Kobold	TRUE	k	Brown	Actor					TRUE
+Door	TRUE	+		Furnishing					TRUE
+Wood			RedBrown						
+Stone Floor					TRUE	Grey	DarkGrey	Tile	
