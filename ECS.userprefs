@@ -3,8 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
     <Files>
       <File FileName="Comments and Plan.txt" Line="24" Column="1" />
-      <File FileName="GameSystem/SystemTypes/EntitySystem.cs" Line="33" Column="66" />
-      <File FileName="Component/ComponentData/ComponentDatabase.cs" Line="20" Column="57" />
+      <File FileName="Component/ComponentData/ECSDatabase.cs" Line="122" Column="1" />
+      <File FileName="GameSystem/SystemTypes/EntityFactory.cs" Line="29" Column="43" />
       <File FileName="ECS Status" />
     </Files>
     <Pads>
