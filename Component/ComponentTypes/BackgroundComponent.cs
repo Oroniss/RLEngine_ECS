@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ECS.Components
 {
@@ -7,14 +8,24 @@ namespace ECS.Components
 	{
 		string _backgroundColor;
 		string _fogColor;
-		BackgroundDisplayLayer _displayLayer;
+		BackgroundDisplayLayer _backgroundDisplayLayer;
 
-		public BackgroundComponent(int entityId, string backgroundColor, string fogColor, BackgroundDisplayLayer layer)
+		public BackgroundComponent(int entityId, string backgroundColor, string fogColor, 
+		                           BackgroundDisplayLayer backgroundLayer)
 			:base(ComponentType.Background, entityId)
 		{
 			_backgroundColor = backgroundColor;
 			_fogColor = fogColor;
-			_displayLayer= layer;
+			_backgroundDisplayLayer= backgroundLayer;
+		}
+
+		public BackgroundComponent(int entityId, Dictionary<string, string> otherParameters)
+			:base(ComponentType.Background, entityId)
+		{
+			_backgroundColor = GetStringParameter("backgroundColor", otherParameters);
+			_fogColor = GetStringParameter("fogColor", otherParameters);
+			_backgroundDisplayLayer = (BackgroundDisplayLayer)Enum.Parse(typeof(BackgroundDisplayLayer),
+												 GetStringParameter("backgroundDisplayLayer", otherParameters));
 		}
 
 		public string BackgroundColor
@@ -27,9 +38,9 @@ namespace ECS.Components
 			get { return _fogColor; }
 		}
 
-		public BackgroundDisplayLayer DisplayLayer
+		public BackgroundDisplayLayer BackgroundDisplayLayer
 		{
-			get { return _displayLayer; }
+			get { return _backgroundDisplayLayer; }
 		}
 	}
 
