@@ -26,11 +26,11 @@ namespace ECS.Components
 		public MapComponent(int entityId, Dictionary<string, string> otherParameters)
 			: base(ComponentType.Map, entityId)
 		{
-			_mapWidth = GetIntParameter("mapWidth", otherParameters);
-			_mapHeight = GetIntParameter("mapHeight", otherParameters);
+			_mapWidth = GetIntParameter("MapWidth", otherParameters);
+			_mapHeight = GetIntParameter("MapHeight", otherParameters);
 
 			_tileGrid = new int[Width * Height];
-			var tileString = GetStringParameter("tileGrid", otherParameters).Split(',');
+			var tileString = GetStringParameter("TileGrid", otherParameters).Split(',');
 			for (int i = 0; i < Width * Height; i++)
 				_tileGrid[i] = int.Parse(tileString[i]);
 		}

@@ -21,10 +21,10 @@ namespace ECS.Components
 		public ForegroundComponent(int entityId, Dictionary<string, string> otherParameters)
 			:base(ComponentType.Foreground, entityId)
 		{
-			_symbol = GetStringParameter("symbol", otherParameters)[0];
-			_fgColor = GetStringParameter("fgColor", otherParameters);
+			_symbol = GetStringParameter("Symbol", otherParameters)[0];
+			_fgColor = GetStringParameter("FgColor", otherParameters);
 			_foregroundDisplayLayer = (ForegroundDisplayLayer)Enum.Parse(typeof(ForegroundDisplayLayer),
-												 GetStringParameter("foregroundDisplayLayer", otherParameters));
+												 GetStringParameter("ForegroundDisplayLayer", otherParameters));
 		}
 
 		public char Symbol

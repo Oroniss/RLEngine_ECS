@@ -2,18 +2,9 @@
   <MonoDevelop.Ide.ItemProperties.ECS PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
     <Files>
-      <File FileName="Comments and Plan.txt" Line="24" Column="1" />
-      <File FileName="Component/ComponentData/ECSDatabase.cs" Line="122" Column="1" />
-      <File FileName="GameSystem/SystemTypes/EntityFactory.cs" Line="29" Column="43" />
+      <File FileName="Comments and Plan.txt" Line="25" Column="1" />
       <File FileName="ECS Status" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="ECS" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

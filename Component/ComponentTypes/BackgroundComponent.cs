@@ -22,10 +22,10 @@ namespace ECS.Components
 		public BackgroundComponent(int entityId, Dictionary<string, string> otherParameters)
 			:base(ComponentType.Background, entityId)
 		{
-			_backgroundColor = GetStringParameter("backgroundColor", otherParameters);
-			_fogColor = GetStringParameter("fogColor", otherParameters);
+			_backgroundColor = GetStringParameter("BackgroundColor", otherParameters);
+			_fogColor = GetStringParameter("FogColor", otherParameters);
 			_backgroundDisplayLayer = (BackgroundDisplayLayer)Enum.Parse(typeof(BackgroundDisplayLayer),
-												 GetStringParameter("backgroundDisplayLayer", otherParameters));
+												 GetStringParameter("BackgroundDisplayLayer", otherParameters));
 		}
 
 		public string BackgroundColor

@@ -21,9 +21,9 @@ namespace ECS.Components
 		public PositionComponent(int entityId, Dictionary<string, string> otherParameters)
 			: base(ComponentType.Position, entityId)
 		{
-			_xLoc = GetIntParameter("xLoc", otherParameters);
-			_yLoc = GetIntParameter("yLoc", otherParameters);
-			_levelName = GetStringParameter("levelName", otherParameters);
+			_xLoc = GetIntParameter("XLoc", otherParameters);
+			_yLoc = GetIntParameter("YLoc", otherParameters);
+			_levelName = GetStringParameter("LevelName", otherParameters);
 		}
 
 		public int XLoc

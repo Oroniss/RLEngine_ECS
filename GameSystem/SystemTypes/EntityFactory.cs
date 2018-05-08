@@ -13,11 +13,11 @@ namespace ECS.GameSystems
 			var newEntityId = GetNewEntityId();
 			Dictionary<string, string> allParameters;
 			List<Trait> allTraits;
-			if (otherParameters.ContainsKey("material"))
+			if (otherParameters.ContainsKey("Material"))
 			{
 				allParameters = CombineParameterDictionaries(otherParameters,
-					   ECSDatabase.GetComponentData(entityName, otherParameters["material"]));
-				allTraits = ECSDatabase.GetTraitData(entityName, otherParameters["material"]);
+					   ECSDatabase.GetComponentData(entityName, otherParameters["Material"]));
+				allTraits = ECSDatabase.GetTraitData(entityName, otherParameters["Material"]);
 			}
 			else
 			{
@@ -26,15 +26,38 @@ namespace ECS.GameSystems
 				allTraits = ECSDatabase.GetTraitData(entityName);
 			}
 
+			if (allParameters.ContainsKey("BackgroundComponent"))
+			{
+				var component = new BackgroundComponent(newEntityId, allParameters);
+				AddComponent(newEntityId, component);
+			}
+
+			if (allParameters.ContainsKey("ForegroundComponent"))
+			{
+				var component = new ForegroundComponent(newEntityId, allParameters);
+				AddComponent(newEntityId, component);
+			}
+
+			if (allParameters.ContainsKey("MapComponent"))
+			{
+				var component = new MapComponent(newEntityId, allParameters);
+				AddComponent(newEntityId, component);
+			}
+
+			if (allParameters.ContainsKey("PositionComponent"))
+			{
+				var component = new PositionComponent(newEntityId, allParameters);
+				AddComponent(newEntityId, component);
+			}
+
 			// TODO: Setup all the components here.
 
 			foreach (Trait trait in allTraits)
 				AddTrait(newEntityId, trait);
 
+			GameEvents.CreateEntityEvent.NewCreateEntityEvent(newEntityId);
+
 			return newEntityId;	
 		}
-
-
 	}
-
 }
