@@ -65,7 +65,7 @@
     <Compile Include="GameSystem\SystemTypes\MovementSystem.cs" />
     <Compile Include="GameSystem\SystemTypes\EntitySystem.cs" />
     <Compile Include="Component\Trait.cs" />
-    <Compile Include="Component\ComponentData\ComponentDatabaseConnection.cs" />
+    <Compile Include="Component\ComponentData\ComponentDatabase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

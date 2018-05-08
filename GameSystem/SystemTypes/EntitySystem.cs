@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using ECS.Components;
+using ECS.Components.ComponentData;
 using ECS.GameEvents;
+using System.Linq;
 
 namespace ECS.GameSystems
 {
@@ -24,9 +26,22 @@ namespace ECS.GameSystems
 		public EntitySystem(EventType[] watchedEvents)
 			: base("EntitySystem", watchedEvents) { }
 
-		public int CreateEntity(string entityName, string[] otherParameters)
+		public int CreateEntity(string entityName, Dictionary<string, string> otherParameters)
 		{
+			Dictionary<string, string> allParameters;
+			if (otherParameters.ContainsKey("material"))
+				allParameters = CombineParameterDictionaries(otherParameters,
+				       ComponentDatabase.GetComponentData(entityName, otherParameters["material"]));
+			
+			allParameters = CombineParameterDictionaries(otherParameters,
+			           ComponentDatabase.GetComponentData(entityName));
 			return SetupNewEntity();
+		}
+
+		Dictionary<string, string> CombineParameterDictionaries(Dictionary<string, string> dict1, 
+		                                                        Dictionary<string, string> dict2)
+		{
+			return dict1.Union(dict2).ToDictionary(k => k.Key, v => v.Value);
 		}
 
 		int SetupNewEntity()
