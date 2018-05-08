@@ -1,10 +1,33 @@
-﻿10/14/18 - Added Component class
-10/14/18 - Added Entity class
-10/14/18 - Added Group class
+﻿10/4/18 - Added Component class
+10/4/18 - Added Entity class
+10/4/18 - Added Group class
+11/4/18 - Added beginnings of a System class.
+11/4/18 - Added beginnings of an Event class.
+23/4/18 - Deleted the index/group class - I think that there won't be many of them so they are better of done individually.
+23/4/18 - Added Position, Foreground and Background components.
+24/4/18 - Fleshed out GameEvent base class
+24/4/18 - Fleshed out GameSystem base class
+24/4/18 - Added CreateEntityEvent
+24/4/18 - Added MovementEvent
+25/4/18 - Added MapComponent
+25/4/18 - Started work on the LevelSystem
+25/4/18 - Added a movement system
+26/4/18 - Refactored out the Entity class - it has become an EntitySystem now.
+27/4/18 - Started tidying up the systems a bit.
+27/4/18 - Started work on the entity factory/component database manager.
+2/5/18 - Added a data source - just a class that reads from a CSV file for now - easily fixable to go elsewhere though.
+8/5/18 - Added standard constructors to all the component types.
+8/5/18 - Started building the entity factory.
 
 Remaining tasks.
 
-Add a System class.
-Add a Factory class.
+Revise entity factory - Have the dictionary actually store the combinations of material + entity type, since we will
+likely only need 1 or 2 different types at a time.
+
+Just use csv files - later on write a parser to turn them into data base tables.
+Add an abstract constructor which takes this as an argument.
+
+
 Add an ECS serialiser.
+
 Add unit tests for each piece.

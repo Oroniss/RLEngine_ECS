@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ECS.Components
 {
@@ -15,6 +16,14 @@ namespace ECS.Components
 			_xLoc = x;
 			_yLoc = y;
 			_levelName = levelName;
+		}
+
+		public PositionComponent(int entityId, Dictionary<string, string> otherParameters)
+			: base(ComponentType.Position, entityId)
+		{
+			_xLoc = GetIntParameter("xLoc", otherParameters);
+			_yLoc = GetIntParameter("yLoc", otherParameters);
+			_levelName = GetStringParameter("levelName", otherParameters);
 		}
 
 		public int XLoc

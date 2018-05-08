@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ECS.Components
 {
@@ -7,14 +8,23 @@ namespace ECS.Components
 	{
 		char _symbol;
 		string _fgColor;
-		ForegroundDisplayLayer _displayLayer;
+		ForegroundDisplayLayer _foregroundDisplayLayer;
 
-		public ForegroundComponent(int entityId, char symbol, string fgColor, ForegroundDisplayLayer layer)
+		public ForegroundComponent(int entityId, char symbol, string fgColor, ForegroundDisplayLayer foregroundLayer)
 			:base(ComponentType.Foreground, entityId)
 		{
 			_symbol = symbol;
 			_fgColor = fgColor;
-			_displayLayer = layer;
+			_foregroundDisplayLayer = foregroundLayer;
+		}
+
+		public ForegroundComponent(int entityId, Dictionary<string, string> otherParameters)
+			:base(ComponentType.Foreground, entityId)
+		{
+			_symbol = GetStringParameter("symbol", otherParameters)[0];
+			_fgColor = GetStringParameter("fgColor", otherParameters);
+			_foregroundDisplayLayer = (ForegroundDisplayLayer)Enum.Parse(typeof(ForegroundDisplayLayer),
+												 GetStringParameter("foregroundDisplayLayer", otherParameters));
 		}
 
 		public char Symbol
@@ -29,7 +39,7 @@ namespace ECS.Components
 
 		public ForegroundDisplayLayer DisplayLayer
 		{
-			get { return _displayLayer; }
+			get { return _foregroundDisplayLayer; }
 		}
 	}
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ECS.Components
 {
@@ -20,6 +21,18 @@ namespace ECS.Components
 				for (int x = 0; x < _mapWidth; x++)
 					_tileGrid[ConvertXYToIndex(x, y)] = tileGrid[y, x];
 			}
+		}
+
+		public MapComponent(int entityId, Dictionary<string, string> otherParameters)
+			: base(ComponentType.Map, entityId)
+		{
+			_mapWidth = GetIntParameter("mapWidth", otherParameters);
+			_mapHeight = GetIntParameter("mapHeight", otherParameters);
+
+			_tileGrid = new int[Width * Height];
+			var tileString = GetStringParameter("tileGrid", otherParameters).Split(',');
+			for (int i = 0; i < Width * Height; i++)
+				_tileGrid[i] = int.Parse(tileString[i]);
 		}
 
 		public int Width
