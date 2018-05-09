@@ -35,8 +35,8 @@ namespace ECS.Components.ComponentData
 
 		static Dictionary<string,string> QueryComponentDatabase(string entityName)
 		{
-			StreamReader fileReader = new StreamReader(_componentDataPath);
-			string[] header = fileReader.ReadLine().Split(',');
+			var fileReader = new StreamReader(_componentDataPath);
+			var header = fileReader.ReadLine().Split(',');
 			if (header[0] != "EntityName")
 			{
 				fileReader.Close();
@@ -44,11 +44,11 @@ namespace ECS.Components.ComponentData
 				return null;
 			}
 
-			Dictionary<string, string> entityDetails = new Dictionary<string, string>();
+			var entityDetails = new Dictionary<string, string>();
 			string line;
 			while ((line = fileReader.ReadLine()) != null)
 			{
-				string[] splitLine = line.Split(',');
+				var splitLine = line.Split(',');
 
 				if (splitLine[0] == entityName)
 				{
@@ -94,8 +94,8 @@ namespace ECS.Components.ComponentData
 
 		static List<Trait> QueryTraitDatabase(string entityName)
 		{
-			StreamReader fileReader = new StreamReader(_traitDataPath);
-			string[] header = fileReader.ReadLine().Split(',');
+			var fileReader = new StreamReader(_traitDataPath);
+			var header = fileReader.ReadLine().Split(',');
 			if (header[0] != "EntityName")
 			{
 				fileReader.Close();
@@ -103,11 +103,11 @@ namespace ECS.Components.ComponentData
 				return null;
 			}
 
-			List<Trait> traits = new List<Trait>();
+			var traits = new List<Trait>();
 			string line;
 			while ((line = fileReader.ReadLine()) != null)
 			{
-				string[] splitLine = line.Split(',');
+				var splitLine = line.Split(',');
 
 				if (splitLine[0] == entityName)
 				{

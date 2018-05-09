@@ -9,7 +9,7 @@ namespace ECS.GameSystems
 	public partial class EntitySystem:GameSystem
 	{
 		List<int> unusedEntityIds = new List<int>();
-		int maxEntityId = 0;
+		int maxEntityId; // Will default to 0.
 
 		SortedDictionary<ComponentType, SortedDictionary<int, Component>> components =
 			new SortedDictionary<ComponentType, SortedDictionary<int, Component>>();
@@ -87,14 +87,11 @@ namespace ECS.GameSystems
 		{
 			if (IsValidEntityId(entityId))
 			{
-				int index = (int)componentType;
+				var index = (int)componentType;
 				return hasComponent[entityId][index];
 			}
-			else
-			{
-				ErrorLogger.AddDebugText(string.Format("Invalid Entity ID: {0}", entityId));
-				return false;
-			}
+			ErrorLogger.AddDebugText(string.Format("Invalid Entity ID: {0}", entityId));
+			return false;
 		}
 
 		public Component GetComponent(int entityId, ComponentType componentType)
@@ -103,18 +100,12 @@ namespace ECS.GameSystems
 			{
 				if (HasComponent(entityId, componentType))
 					return components[componentType][entityId];
-				else
-				{
-					ErrorLogger.AddDebugText(string.Format("Tried to get non-existant component type: {0} for entity: {1}",
-														   componentType, entityId));
-					return null;
-				}
-			}
-			else
-			{
-				ErrorLogger.AddDebugText(string.Format("Invalid Entity ID: {0}", entityId));
+				ErrorLogger.AddDebugText(string.Format("Tried to get non-existant component type: {0} for entity: {1}",
+													   componentType, entityId));
 				return null;
 			}
+			ErrorLogger.AddDebugText(string.Format("Invalid Entity ID: {0}", entityId));
+			return null;
 		}
 
 		public void AddComponent(int entityId, Component component)
@@ -151,21 +142,18 @@ namespace ECS.GameSystems
 		{
 			if (IsValidEntityId(entityId))
 			{
-				int index = (int)trait;
+				var index = (int)trait;
 				return traits[entityId][index] > 0;
 			}
-			else
-			{
-				ErrorLogger.AddDebugText(string.Format("Checked for trait on invalid entity id: {0}", entityId));
-				return false;
-			}
+			ErrorLogger.AddDebugText(string.Format("Checked for trait on invalid entity id: {0}", entityId));
+			return false;
 		}
 
 		public void AddTrait(int entityId, Trait trait)
 		{
 			if (IsValidEntityId(entityId))
 			{
-				int index = (int)trait;
+				var index = (int)trait;
 				traits[entityId][index] = traits[entityId][index] + 1;
 			}
 			else
@@ -177,7 +165,7 @@ namespace ECS.GameSystems
 		{
 			if (IsValidEntityId(entityId))
 			{
-				int index = (int)trait;
+				var index = (int)trait;
 				if (traits[entityId][index] > 0)
 					traits[entityId][index] = traits[entityId][index] - 1;
 				else
@@ -191,7 +179,7 @@ namespace ECS.GameSystems
 
 		public ECSSerialisationData GetSerialisationData()
 		{
-			ECSSerialisationData data = new ECSSerialisationData();
+			var data = new ECSSerialisationData();
 
 			foreach (KeyValuePair<int, Component> item in components[ComponentType.Position])
 				data.PositionComponents[item.Key] = (PositionComponent)item.Value;

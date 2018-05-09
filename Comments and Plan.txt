@@ -21,9 +21,10 @@
 8/5/18 - Split the factory into its own file - though still a partial class of EntitySystem.
 8/5/18 - Set the database up to fetch trait data as well as component data.
 8/5/18 - Finished the factory method to create new entities.
+9/5/18 - Added serialisation functionality.
+9/5/18 - Did first pass of code quality.
 
 Remaining tasks.
 
-Add unit tests for each piece.
-
-Add serialisation.
+Add unit tests for each piece - done in a separate project though.
+Do a thorough reworking of code quality and organisation prior to finishing.

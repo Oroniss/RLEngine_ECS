@@ -7,7 +7,7 @@ namespace ECS.GameSystems
 		string _systemName;
 		EventType[] _watchedEvents;
 
-		public GameSystem(string systemName, EventType[] watchedEvents)
+		protected GameSystem(string systemName, EventType[] watchedEvents)
 		{
 			_systemName = systemName;
 

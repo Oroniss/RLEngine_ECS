@@ -17,7 +17,7 @@ namespace ECS.GameEvents
 
 		EventType _eventType;
 
-		public GameEvent(EventType eventType)
+		protected GameEvent(EventType eventType)
 		{
 			_eventType = eventType;
 		}

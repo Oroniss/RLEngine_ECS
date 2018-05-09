@@ -9,7 +9,7 @@
 
 		public static void AddDebugText(string debugText, string color)
 		{
-			
+			System.Console.WriteLine(debugText + ", " + color);
 		}
 	}
 }

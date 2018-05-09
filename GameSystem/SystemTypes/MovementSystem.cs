@@ -17,8 +17,7 @@ namespace ECS.GameSystems
 				MoveEntityEvent.NewMovementEvent(entityId, oldX, oldY, newX, newY);
 				return true;
 			}
-			else
-				return false; // TODO: If this is the player, print a message to the screen.
+			return false; // TODO: If this is the player, print a message to the screen.
 		}
 
 		// TODO: Update pathibility

@@ -12,9 +12,9 @@ namespace ECS.GameSystems
 
 		static EventType[] entitySystemEvents = { };
 
-		static EntitySystem entitySystem = new EntitySystem(entitySystemEvents);
-		static LevelSystem levelSystem = new LevelSystem(levelSystemEvents);
-		static MovementSystem movementSystem = new MovementSystem(movementSystemEvents);
+		static readonly EntitySystem entitySystem = new EntitySystem(entitySystemEvents);
+		static readonly LevelSystem levelSystem = new LevelSystem(levelSystemEvents);
+		static readonly MovementSystem movementSystem = new MovementSystem(movementSystemEvents);
 
 		public static EntitySystem EntitySystem
 		{

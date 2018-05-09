@@ -12,7 +12,7 @@ namespace ECS.Components
 		long _componentId;
 		int _entityId;
 
-		public Component(ComponentType componentType, int entityId)
+		protected Component(ComponentType componentType, int entityId)
 		{
 			_componentType = componentType;
 			_componentId = maxComponentId;

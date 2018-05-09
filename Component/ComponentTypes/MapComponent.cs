@@ -6,9 +6,9 @@ namespace ECS.Components
 	[Serializable]
 	public class MapComponent:Component
 	{
-		int _mapWidth;
-		int _mapHeight;
-		int[] _tileGrid;
+		readonly int _mapWidth;
+		readonly int _mapHeight;
+		readonly int[] _tileGrid;
 
 		public MapComponent(int entityId, int width, int height, int[,] tileGrid)
 			:base(ComponentType.Map, entityId)
@@ -47,7 +47,7 @@ namespace ECS.Components
 
 		public int GetMapTile(int x, int y)
 		{
-			int index = ConvertXYToIndex(x, y);
+			var index = ConvertXYToIndex(x, y);
 			return _tileGrid[index];
 		}
 
