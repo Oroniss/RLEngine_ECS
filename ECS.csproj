@@ -51,6 +51,7 @@
     <Folder Include="GameSystem\SystemTypes\" />
     <Folder Include="Event\EventTypes\" />
     <Folder Include="Component\ComponentData\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Component\Trait.cs" />
     <Compile Include="Component\ComponentData\ECSDatabase.cs" />
     <Compile Include="GameSystem\SystemTypes\EntityFactory.cs" />
+    <Compile Include="GameSystem\SystemTypes\ECSSerialisationData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

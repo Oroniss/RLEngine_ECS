@@ -188,5 +188,39 @@ namespace ECS.GameSystems
 				ErrorLogger.AddDebugText(string.Format("Tried to remove trait {0} from invalid entity id: {1}",
 													   trait, entityId));
 		}
+
+		public ECSSerialisationData GetSerialisationData()
+		{
+			ECSSerialisationData data = new ECSSerialisationData();
+
+			foreach (KeyValuePair<int, Component> item in components[ComponentType.Position])
+				data.PositionComponents[item.Key] = (PositionComponent)item.Value;
+			foreach (KeyValuePair<int, Component> item in components[ComponentType.Foreground])
+				data.ForegroundComponents[item.Key] = (ForegroundComponent)item.Value;
+			foreach (KeyValuePair<int, Component> item in components[ComponentType.Background])
+				data.BackgroundComponents[item.Key] = (BackgroundComponent)item.Value;
+			foreach (KeyValuePair<int, Component> item in components[ComponentType.Map])
+				data.MapComponents[item.Key] = (MapComponent)item.Value;
+
+			data.Components = hasComponent;
+			data.Traits = traits;
+
+			return data;
+		}
+
+		public void LoadSerialisationData(ECSSerialisationData data)
+		{
+			foreach (KeyValuePair<int, PositionComponent> item in data.PositionComponents)
+				components[ComponentType.Position][item.Key] = item.Value;
+			foreach (KeyValuePair<int, ForegroundComponent> item in data.ForegroundComponents)
+				components[ComponentType.Foreground][item.Key] = item.Value;
+			foreach (KeyValuePair<int, BackgroundComponent> item in data.BackgroundComponents)
+				components[ComponentType.Background][item.Key] = item.Value;
+			foreach (KeyValuePair<int, MapComponent> item in data.MapComponents)
+				components[ComponentType.Map][item.Key] = item.Value;
+
+			hasComponent = data.Components;
+			traits = data.Traits;
+		}
 	}
 }
