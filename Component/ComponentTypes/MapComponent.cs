@@ -10,17 +10,15 @@ namespace ECS.Components
 		readonly int _mapHeight;
 		readonly int[] _tileGrid;
 
-		public MapComponent(int entityId, int width, int height, int[,] tileGrid)
+		public MapComponent(int entityId, int width, int height, int[] tileGrid)
 			:base(ComponentType.Map, entityId)
 		{
 			_mapWidth = width;
 			_mapHeight = height;
 			_tileGrid = new int[width * height];
-			for (int y = 0; y < _mapHeight; y++)
-			{
-				for (int x = 0; x < _mapWidth; x++)
-					_tileGrid[ConvertXYToIndex(x, y)] = tileGrid[y, x];
-			}
+
+			for (int i = 0; i < width * height; i++)
+				_tileGrid[i] = tileGrid[i];
 		}
 
 		public MapComponent(int entityId, Dictionary<string, string> otherParameters)

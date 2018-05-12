@@ -3,8 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
     <Files>
       <File FileName="Comments and Plan.txt" Line="25" Column="41" />
-      <File FileName="Tests/ComponentTests.cs" Line="76" Column="17" />
-      <File FileName="Component/ComponentTypes/BackgroundComponent.cs" Line="28" Column="35" />
+      <File FileName="Tests/ComponentTests.cs" Line="119" Column="1" />
+      <File FileName="Component/ComponentTypes/MapComponent.cs" Line="21" Column="32" />
       <File FileName="ECS Status" />
     </Files>
     <Pads>
