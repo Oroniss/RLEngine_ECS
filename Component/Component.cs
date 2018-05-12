@@ -6,24 +6,13 @@ namespace ECS.Components
 	[Serializable]
 	public abstract class Component
 	{
-		static long maxComponentId = 1;
-
 		ComponentType _componentType;
-		long _componentId;
 		int _entityId;
 
 		protected Component(ComponentType componentType, int entityId)
 		{
 			_componentType = componentType;
-			_componentId = maxComponentId;
-			maxComponentId++;
-
 			_entityId = entityId;
-		}
-
-		public long ComponentId
-		{
-			get { return _componentId; }
 		}
 
 		public int EntityId

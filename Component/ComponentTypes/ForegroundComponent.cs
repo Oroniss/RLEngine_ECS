@@ -22,7 +22,7 @@ namespace ECS.Components
 			:base(ComponentType.Foreground, entityId)
 		{
 			_symbol = GetStringParameter("Symbol", otherParameters)[0];
-			_fgColor = GetStringParameter("FgColor", otherParameters);
+			_fgColor = GetStringParameter("ForegroundColor", otherParameters);
 			_foregroundDisplayLayer = (ForegroundDisplayLayer)Enum.Parse(typeof(ForegroundDisplayLayer),
 												 GetStringParameter("ForegroundDisplayLayer", otherParameters));
 		}
