@@ -117,5 +117,23 @@ namespace ECS
 			Assert.AreEqual(1, testComponent2.GetMapTile(2, 1));
 			Assert.AreEqual(1, testComponent2.GetMapTile(0, 2));
 		}
+
+		[Test]
+		public void TestComponentErrorHandling()
+		{
+			ErrorLogger.SetToTest();
+
+			var paramDict = new Dictionary<string, string> {
+				{"EntityName", "TestEntity"}};
+
+			var testComponent = new PositionComponent(0, paramDict);
+
+			Assert.AreEqual("Parameter dictionary for TestEntity did not contain parameter name XLoc", 
+			                ErrorLogger.GetNextMessage());
+			Assert.AreEqual("Parameter dictionary for TestEntity did not contain parameter name YLoc",
+							ErrorLogger.GetNextMessage());
+			Assert.AreEqual("Parameter dictionary for TestEntity did not contain parameter name LevelName",
+							ErrorLogger.GetNextMessage());
+		}
 	}
 }
