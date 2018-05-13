@@ -76,6 +76,8 @@
     <Compile Include="GameSystem\SystemTypes\EntityFactory.cs" />
     <Compile Include="GameSystem\SystemTypes\ECSSerialisationData.cs" />
     <Compile Include="Tests\ComponentTests.cs" />
+    <Compile Include="Tests\EventTests.cs" />
+    <Compile Include="Tests\TestSystem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

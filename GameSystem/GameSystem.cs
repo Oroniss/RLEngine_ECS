@@ -1,9 +1,12 @@
 ﻿using ECS.GameEvents;
+using System;
 
 namespace ECS.GameSystems
 {
 	public abstract class GameSystem
 	{
+		protected static EventType[] AllEventTypes = (EventType[])Enum.GetValues(typeof(EventType));
+
 		string _systemName;
 		EventType[] _watchedEvents;
 

@@ -50,7 +50,10 @@ namespace ECS.GameEvents
 		public static void RegisterSystem(GameSystem gameSystem, EventType[] watchedEvents)
 		{
 			if (setupRequired)
+			{
 				SetupListeners();
+				setupRequired = false;
+			}
 
 			foreach (EventType eventType in watchedEvents)
 				listeners[eventType].Add(gameSystem);
