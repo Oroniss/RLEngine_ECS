@@ -80,6 +80,7 @@
     <Compile Include="Tests\TestSystem.cs" />
     <Compile Include="Tests\GameSystemTests.cs" />
     <Compile Include="Tests\TestComponentDatabase.cs" />
+    <Compile Include="Tests\TestEntityFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

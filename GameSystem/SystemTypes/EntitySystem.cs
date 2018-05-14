@@ -23,7 +23,11 @@ namespace ECS.GameSystems
 
 
 		public EntitySystem(EventType[] watchedEvents)
-			: base("EntitySystem", watchedEvents) { }
+			: base("EntitySystem", watchedEvents) 
+		{
+			foreach (ComponentType componentType in Enum.GetValues(typeof(ComponentType)))
+				components[componentType] = new SortedDictionary<int, Component>();
+		}
 
 		Dictionary<string, string> CombineParameterDictionaries(Dictionary<string, string> dict1, 
 		                                                        Dictionary<string, string> dict2)
