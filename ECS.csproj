@@ -78,6 +78,8 @@
     <Compile Include="Tests\ComponentTests.cs" />
     <Compile Include="Tests\EventTests.cs" />
     <Compile Include="Tests\TestSystem.cs" />
+    <Compile Include="Tests\GameSystemTests.cs" />
+    <Compile Include="Tests\TestComponentDatabase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

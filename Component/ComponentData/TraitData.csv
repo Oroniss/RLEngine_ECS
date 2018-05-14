@@ -1,6 +1,7 @@
 EntityName,Traits,
-Goblin,BlockMove,
-Kobold,BlockMove,
-Door,BlockMove,BlockLOS
-Wood,,
-Stone Floor,,
+TestEntity1,BlockMove,
+TestEntity2,BlockMove,
+TestEntity3,BlockMove,BlockLOS
+TestMaterial1,Wood,
+TestEntity4,,
+TestEntity5,BlockMove,

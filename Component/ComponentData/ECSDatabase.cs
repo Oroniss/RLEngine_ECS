@@ -26,9 +26,11 @@ namespace ECS.Components.ComponentData
 		{
 			if (!_componentData.ContainsKey(materialName + entityName))
 			{
-				var entityDate = QueryComponentDatabase(entityName);
+				var entityData = QueryComponentDatabase(entityName);
 				var materialData = QueryComponentDatabase(materialName);
-				_componentData[materialName + entityName ] = CombineParameterDictionaries(entityDate, materialData);
+				entityData["EntityName"] = materialName + entityName;
+				materialData.Remove("EntityName");
+				_componentData[materialName + entityName ] = CombineParameterDictionaries(entityData, materialData);
 			}
 			return _componentData[materialName + entityName];
 		}

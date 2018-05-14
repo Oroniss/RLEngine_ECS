@@ -3,6 +3,7 @@
 	public enum Trait
 	{
 		BlockLOS,
-		BlockMove
+		BlockMove,
+		Wood
 	}
 }
