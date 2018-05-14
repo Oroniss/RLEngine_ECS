@@ -81,6 +81,7 @@
     <Compile Include="Tests\GameSystemTests.cs" />
     <Compile Include="Tests\TestComponentDatabase.cs" />
     <Compile Include="Tests\TestEntityFactory.cs" />
+    <Compile Include="Tests\SerialisationTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

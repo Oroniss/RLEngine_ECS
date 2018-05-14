@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.ItemProperties.ECS PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ECS Status">
     <Files>
-      <File FileName="Comments and Plan.txt" Line="42" Column="47" />
+      <File FileName="Comments and Plan.txt" Line="38" Column="1" />
+      <File FileName="Tests/TestEntityFactory.cs" Line="13" Column="2" />
       <File FileName="ECS Status" />
     </Files>
     <Pads>
