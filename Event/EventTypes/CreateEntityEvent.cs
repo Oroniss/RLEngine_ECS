@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Revised for ECS version 1.0.
+
+using System;
 
 namespace ECS.GameEvents
 {
@@ -6,6 +8,8 @@ namespace ECS.GameEvents
 	public class CreateEntityEvent:GameEvent
 	{
 		int _entityId;
+
+		// TODO: Think about how to store/deal with the other entity details.
 
 		CreateEntityEvent(int entityId)
 			:base(EventType.CreateEntity)

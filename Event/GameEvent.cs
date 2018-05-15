@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Updated for ECS version 1.0.
+
+using System.Collections.Generic;
 using ECS.GameSystems;
 using System;
 
@@ -50,10 +52,7 @@ namespace ECS.GameEvents
 		public static void RegisterSystem(GameSystem gameSystem, EventType[] watchedEvents)
 		{
 			if (setupRequired)
-			{
 				SetupListeners();
-				setupRequired = false;
-			}
 
 			foreach (EventType eventType in watchedEvents)
 				listeners[eventType].Add(gameSystem);

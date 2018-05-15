@@ -1,3 +1,5 @@
+// Updated for ECS version 1.0.
+
 using System;
 
 namespace ECS.GameEvents
