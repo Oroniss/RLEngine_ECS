@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ECS.Components
+namespace RLEngine.Components
 {
 	[Serializable]
 	public class PositionComponent:Component

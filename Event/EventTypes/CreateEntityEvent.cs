@@ -1,8 +1,8 @@
-﻿// Revised for ECS version 1.0.
+// Revised for ECS version 1.0.
 
 using System;
 
-namespace ECS.GameEvents
+namespace RLEngine.GameEvents
 {
 	[Serializable]
 	public class CreateEntityEvent:GameEvent

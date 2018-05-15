@@ -34,7 +34,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Comments and Plan.txt" />
+    <None Include="Comments and Plan V1.0txt" />
     <None Include="Component\ComponentData\ComponentData.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

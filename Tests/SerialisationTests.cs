@@ -1,10 +1,10 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using NUnit.Framework;
-using ECS.GameSystems;
+using RLEngine.GameSystems;
 using System.Collections.Generic;
 
-namespace ECS.Testing
+namespace RLEngine.Testing
 {
 	[TestFixture]
 	public class SerialisationTests

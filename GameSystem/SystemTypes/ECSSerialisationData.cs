@@ -1,10 +1,10 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using System;
 using System.Collections.Generic;
-using ECS.Components;
+using RLEngine.Components;
 
-namespace ECS.GameSystems
+namespace RLEngine.GameSystems
 {
 	[Serializable]
 	public class ECSSerialisationData

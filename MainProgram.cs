@@ -1,6 +1,6 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
-namespace ECS
+namespace RLEngine
 {
 	public class MainProgram
 	{

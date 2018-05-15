@@ -1,6 +1,6 @@
 // Updated for ECS version 1.0.
 
-namespace ECS.GameEvents
+namespace RLEngine.GameEvents
 {
 	public enum EventType
 	{

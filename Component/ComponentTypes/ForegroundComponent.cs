@@ -1,9 +1,9 @@
-﻿// Revised for ECS version 1.0.
+// Revised for ECS version 1.0.
 
 using System;
 using System.Collections.Generic;
 
-namespace ECS.Components
+namespace RLEngine.Components
 {
 	[Serializable]
 	public class ForegroundComponent:Component

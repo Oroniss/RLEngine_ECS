@@ -1,10 +1,10 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using System.Collections.Generic;
-using ECS.GameSystems;
+using RLEngine.GameSystems;
 using System;
 
-namespace ECS.GameEvents
+namespace RLEngine.GameEvents
 {
 	[Serializable]
 	public abstract class GameEvent

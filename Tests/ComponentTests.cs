@@ -1,10 +1,10 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using NUnit.Framework;
-using ECS.Components;
+using RLEngine.Components;
 using System.Collections.Generic;
 
-namespace ECS
+namespace RLEngine
 {
 	[TestFixture]
 	public class ComponentTests

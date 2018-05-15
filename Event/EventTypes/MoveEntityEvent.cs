@@ -2,7 +2,7 @@
 
 using System;
 
-namespace ECS.GameEvents
+namespace RLEngine.GameEvents
 {
 	[Serializable]
 	public class MoveEntityEvent:GameEvent

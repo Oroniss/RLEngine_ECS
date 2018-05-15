@@ -1,9 +1,9 @@
-﻿// Revised for ECS version 1.0.
+// Revised for ECS version 1.0.
 
-using ECS.GameEvents;
-using ECS.Components;
+using RLEngine.GameEvents;
+using RLEngine.Components;
 
-namespace ECS.GameSystems
+namespace RLEngine.GameSystems
 {
 	public class LevelSystem:GameSystem
 	{

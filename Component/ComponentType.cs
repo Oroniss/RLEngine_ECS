@@ -1,6 +1,6 @@
-﻿// Revised for ECS version 1.0.
+// Revised for ECS version 1.0.
 
-namespace ECS.Components
+namespace RLEngine.Components
 {
 	public enum ComponentType
 	{

@@ -1,9 +1,9 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using NUnit.Framework;
-using ECS.GameEvents;
+using RLEngine.GameEvents;
 
-namespace ECS.Testing
+namespace RLEngine.Testing
 {
 	[TestFixture]
 	public class EventTests

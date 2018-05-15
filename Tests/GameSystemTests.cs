@@ -1,8 +1,8 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using NUnit.Framework;
 
-namespace ECS.Testing
+namespace RLEngine.Testing
 {
 	[TestFixture]
 	public class GameSystemTests

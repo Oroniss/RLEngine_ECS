@@ -1,12 +1,12 @@
-﻿// Updated for ECS version 1.0.
+// Updated for ECS version 1.0.
 
 using System;
 using System.Collections.Generic;
-using ECS.Components;
-using ECS.GameEvents;
+using RLEngine.Components;
+using RLEngine.GameEvents;
 using System.Linq;
 
-namespace ECS.GameSystems
+namespace RLEngine.GameSystems
 {
 	public partial class EntitySystem:GameSystem
 	{

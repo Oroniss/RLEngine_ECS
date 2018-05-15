@@ -1,4 +1,4 @@
-﻿/*
+/*
  * This could reasonably go in the EntitySystem tests as well, but since it is pretty specific
  * and also pretty large, it's getting it's own test class.
  * 
@@ -8,10 +8,10 @@
 // Updated for ECS Version 1.0.
 
 using NUnit.Framework;
-using ECS.GameSystems;
+using RLEngine.GameSystems;
 using System.Collections.Generic;
 
-namespace ECS.Testing
+namespace RLEngine.Testing
 {
 	[TestFixture]
 	public class TestEntityFactory

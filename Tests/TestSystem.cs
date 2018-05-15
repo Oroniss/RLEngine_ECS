@@ -1,4 +1,4 @@
-﻿/* 
+/* 
 * Purpose of this class is to create a "dummy" system to test for events - since they can only be picked
 * through listeners. It should never be initialised in an actual game.
 * 
@@ -7,11 +7,11 @@
 
 // Updated for ECS version 1.0.
 
-using ECS.GameSystems;
-using ECS.GameEvents;
+using RLEngine.GameSystems;
+using RLEngine.GameEvents;
 using System.Collections.Generic;
 
-namespace ECS.Testing
+namespace RLEngine.Testing
 {
 	public class TestSystem:GameSystem
 	{

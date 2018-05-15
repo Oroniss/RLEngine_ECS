@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ECS.Components.ComponentData
+namespace RLEngine.Components.ComponentData
 {
 	public static class ECSDatabase
 	{
