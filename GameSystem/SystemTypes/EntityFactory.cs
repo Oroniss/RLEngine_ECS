@@ -1,11 +1,13 @@
-﻿using System;
+﻿// Updated for ECS version 1.0.
+
+using System;
 using System.Collections.Generic;
 using ECS.Components;
 using ECS.Components.ComponentData;
 
 namespace ECS.GameSystems
 {
-	[Serializable]
+
 	public partial class EntitySystem
 	{
 		public int CreateEntity(string entityName, Dictionary<string, string> otherParameters)

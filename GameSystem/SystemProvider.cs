@@ -1,4 +1,6 @@
-﻿using ECS.GameEvents;
+﻿// Updated for ECS version 1.0.
+
+using ECS.GameEvents;
 
 namespace ECS.GameSystems
 {

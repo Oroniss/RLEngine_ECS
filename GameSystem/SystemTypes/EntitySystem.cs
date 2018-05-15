@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Updated for ECS version 1.0.
+
+using System;
 using System.Collections.Generic;
 using ECS.Components;
 using ECS.GameEvents;
@@ -18,7 +20,7 @@ namespace ECS.GameSystems
 
 		readonly int numberOfComponents = Enum.GetValues(typeof(ComponentType)).Length;
 		readonly Type[] _types = { typeof(PositionComponent), typeof(ForegroundComponent),
-					typeof(BackgroundComponent), typeof(MapComponent) };
+					typeof(BackgroundComponent), typeof(MapComponent) }; // TODO: Keep updated.
 		readonly int numberOfTraits = Enum.GetValues(typeof(Trait)).Length;
 
 
