@@ -27,15 +27,10 @@
 13/5/18 - Added testing capability of Error Handling.
 13/5/18 - Added a TestSystem to check event creation and handling.
 13/5/18 - Added testing of GameEvents - pretty straightforward.
+14/5/18 - Started testing component database and reading.
+14/5/18 - Finished component database tests.
+14/5/18 - Added testing of Entity Creation - surprisingly simple.
+14/5/18 - Added tests of the entity serialisation process.
+15/5/18 - Did a code quality pass.
 
-Remaining tasks.
-
-Test GameSystem code - could get messy.
-
-Test the ComponentDatabase.
-Test EntityFactory.
-Test Serialisation.
-
-Do a thorough reworking of code quality and organisation prior to finishing.
-
-Package it up and start working on the engine.
+15/5/18 - Finished version 1.0.
