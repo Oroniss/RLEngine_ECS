@@ -1,36 +1,13 @@
-﻿10/4/18 - Added Component class
-10/4/18 - Added Entity class
-10/4/18 - Added Group class
-11/4/18 - Added beginnings of a System class.
-11/4/18 - Added beginnings of an Event class.
-23/4/18 - Deleted the index/group class - I think that there won't be many of them so they are better off done individually.
-23/4/18 - Added Position, Foreground and Background components.
-24/4/18 - Fleshed out GameEvent base class
-24/4/18 - Fleshed out GameSystem base class
-24/4/18 - Added CreateEntityEvent
-24/4/18 - Added MovementEvent
-25/4/18 - Added MapComponent
-25/4/18 - Started work on the LevelSystem
-25/4/18 - Added a movement system
-26/4/18 - Refactored out the Entity class - it has become an EntitySystem now.
-27/4/18 - Started tidying up the systems a bit.
-27/4/18 - Started work on the entity factory/component database manager.
-2/5/18 - Added a data source - just a class that reads from a CSV file for now - easily fixable to go elsewhere though.
-8/5/18 - Added standard constructors to all the component types.
-8/5/18 - Started building the entity factory.
-8/5/18 - Split the factory into its own file - though still a partial class of EntitySystem.
-8/5/18 - Set the database up to fetch trait data as well as component data.
-8/5/18 - Finished the factory method to create new entities.
-9/5/18 - Added serialisation functionality.
-9/5/18 - Did first pass of code quality.
-12/5/18 - Added first pass of ComponentTests.
-13/5/18 - Added testing capability of Error Handling.
-13/5/18 - Added a TestSystem to check event creation and handling.
-13/5/18 - Added testing of GameEvents - pretty straightforward.
-14/5/18 - Started testing component database and reading.
-14/5/18 - Finished component database tests.
-14/5/18 - Added testing of Entity Creation - surprisingly simple.
-14/5/18 - Added tests of the entity serialisation process.
-15/5/18 - Did a code quality pass.
+﻿15/5/18 - Started the initial version of the engine.
 
-15/5/18 - Finished version 1.0.
+Pieces to Add:
+
+User Interface
+Level + Map
+RNG
+Support - Geometry, Timer, Palette, etc.
+FOV
+Pathfinding
+Entity creation and Destruction.
+Event processing and Log.
+Output text.
