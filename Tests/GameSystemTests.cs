@@ -1,6 +1,4 @@
 ﻿using NUnit.Framework;
-using ECS.GameSystems;
-using ECS.GameEvents;
 
 namespace ECS.Testing
 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Revised for version 1.0.
+
+using System;
 using System.Collections.Generic;
 
 namespace ECS.Components

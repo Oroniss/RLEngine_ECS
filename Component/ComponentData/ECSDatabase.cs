@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Revised for ECS Version 1.0.
+
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 

@@ -1,3 +1,5 @@
+// Revised for ECS version 1.0.
+
 using System;
 using System.Collections.Generic;
 

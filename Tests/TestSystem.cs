@@ -13,7 +13,7 @@ namespace ECS.Testing
 {
 	public class TestSystem:GameSystem
 	{
-		List<GameEvent> _events;
+		readonly List<GameEvent> _events;
 
 		public TestSystem()
 			: base("TestSystem", AllEventTypes)

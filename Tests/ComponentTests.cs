@@ -36,6 +36,11 @@ namespace ECS
 			Assert.AreEqual(10, testComponent2.YLoc);
 			Assert.AreEqual("TestLevel1", testComponent2.LevelName);
 			Assert.AreEqual(ComponentType.Position, testComponent2.componentType);
+
+			testComponent2.UpdatePosition(7, 8);
+
+			Assert.AreEqual(7, testComponent2.XLoc);
+			Assert.AreEqual(8, testComponent2.YLoc);
 		}
 
 		[Test]
