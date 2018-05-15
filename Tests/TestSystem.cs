@@ -5,6 +5,8 @@
 * By default it listens to all types of events.
 */
 
+// Updated for ECS version 1.0.
+
 using ECS.GameSystems;
 using ECS.GameEvents;
 using System.Collections.Generic;

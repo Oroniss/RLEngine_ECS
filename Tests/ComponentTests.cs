@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿// Updated for ECS version 1.0.
+
+using NUnit.Framework;
 using ECS.Components;
 using System.Collections.Generic;
 

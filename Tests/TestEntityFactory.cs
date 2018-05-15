@@ -5,6 +5,8 @@
  * May eventually include tests of other entity types as well - level, quest, etc.
  */
 
+// Updated for ECS Version 1.0.
+
 using NUnit.Framework;
 using ECS.GameSystems;
 using System.Collections.Generic;

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Updated for ECS version 1.0.
+
+using System.Collections.Generic;
 
 namespace ECS
 {
