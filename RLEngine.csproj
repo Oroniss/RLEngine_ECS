@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('packages\NUnit.3.10.1\build\NUnit.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{0170BEB2-FD94-4E46-8F67-C6C344DC453B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ECS</RootNamespace>
+    <AssemblyName>ECS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Comments and Plan V1.0txt" />
+    <None Include="Component\ComponentData\ComponentData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Component\ComponentData\TraitData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Component\" />
+    <Folder Include="Component\ComponentTypes\" />
+    <Folder Include="GameSystem\" />
+    <Folder Include="Event\" />
+    <Folder Include="GameSystem\SystemTypes\" />
+    <Folder Include="Event\EventTypes\" />
+    <Folder Include="Component\ComponentData\" />
+    <Folder Include="Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component\Component.cs" />
+    <Compile Include="MainProgram.cs" />
+    <Compile Include="Component\ComponentType.cs" />
+    <Compile Include="GameSystem\GameSystem.cs" />
+    <Compile Include="Event\GameEvent.cs" />
+    <Compile Include="Event\EventType.cs" />
+    <Compile Include="ErrorLogger.cs" />
+    <Compile Include="Component\ComponentTypes\PositionComponent.cs" />
+    <Compile Include="Component\ComponentTypes\ForegroundComponent.cs" />
+    <Compile Include="Component\ComponentTypes\BackgroundComponent.cs" />
+    <Compile Include="Event\EventTypes\MoveEntityEvent.cs" />
+    <Compile Include="Event\EventTypes\CreateEntityEvent.cs" />
+    <Compile Include="GameSystem\SystemTypes\LevelSystem.cs" />
+    <Compile Include="Component\ComponentTypes\MapComponent.cs" />
+    <Compile Include="GameSystem\SystemProvider.cs" />
+    <Compile Include="GameSystem\SystemTypes\MovementSystem.cs" />
+    <Compile Include="GameSystem\SystemTypes\EntitySystem.cs" />
+    <Compile Include="Component\Trait.cs" />
+    <Compile Include="Component\ComponentData\ECSDatabase.cs" />
+    <Compile Include="GameSystem\SystemTypes\EntityFactory.cs" />
+    <Compile Include="GameSystem\SystemTypes\ECSSerialisationData.cs" />
+    <Compile Include="Tests\ComponentTests.cs" />
+    <Compile Include="Tests\EventTests.cs" />
+    <Compile Include="Tests\TestSystem.cs" />
+    <Compile Include="Tests\GameSystemTests.cs" />
+    <Compile Include="Tests\TestComponentDatabase.cs" />
+    <Compile Include="Tests\TestEntityFactory.cs" />
+    <Compile Include="Tests\SerialisationTests.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

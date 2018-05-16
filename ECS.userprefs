@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{0170BEB2-FD94-4E46-8F67-C6C344DC453B}|Default">
   <MonoDevelop.Ide.ItemProperties.ECS PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RLEngine.git Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Comments and Plan V1.0txt">
     <Files>
       <File FileName="Comments and Plan V1.0txt" Line="13" Column="13" />
-      <File FileName="RLEngine.git Status" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
