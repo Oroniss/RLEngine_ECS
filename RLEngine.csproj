@@ -7,7 +7,7 @@
     <ProjectGuid>{0170BEB2-FD94-4E46-8F67-C6C344DC453B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ECS</RootNamespace>
-    <AssemblyName>ECS</AssemblyName>
+    <AssemblyName>RLEngine</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -32,6 +32,12 @@
     <Reference Include="nunit.framework">
       <HintPath>packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>packages\OpenTK.1.1.1589.5942\lib\NET40\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="RLNET">
+      <HintPath>packages\RLNET.1.0.6\lib\RLNET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Comments and Plan V1.0txt" />
@@ -52,6 +58,8 @@
     <Folder Include="Event\EventTypes\" />
     <Folder Include="Component\ComponentData\" />
     <Folder Include="Tests\" />
+    <Folder Include="UserInterface\" />
+    <Folder Include="Support\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -82,6 +90,14 @@
     <Compile Include="Tests\TestComponentDatabase.cs" />
     <Compile Include="Tests\TestEntityFactory.cs" />
     <Compile Include="Tests\SerialisationTests.cs" />
+    <Compile Include="UserInterface\BackConsole.cs" />
+    <Compile Include="UserInterface\BaseConsole.cs" />
+    <Compile Include="UserInterface\CharacterConsole.cs" />
+    <Compile Include="UserInterface\MainGraphicDisplay.cs" />
+    <Compile Include="UserInterface\MapConsole.cs" />
+    <Compile Include="UserInterface\MenuConsole.cs" />
+    <Compile Include="UserInterface\TextConsole.cs" />
+    <Compile Include="Support\Palette.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
