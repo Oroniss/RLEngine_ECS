@@ -32,22 +32,26 @@
     <Reference Include="nunit.framework">
       <HintPath>packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="OpenTK">
-      <HintPath>packages\OpenTK.1.1.1589.5942\lib\NET40\OpenTK.dll</HintPath>
-    </Reference>
     <Reference Include="RLNET">
       <HintPath>packages\RLNET.1.0.6\lib\RLNET.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>packages\OpenTK.3.0.0\lib\net20\OpenTK.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Comments and Plan V1.0txt" />
-    <None Include="Component\ComponentData\ComponentData.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Component\ComponentData\TraitData.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="Data\LevelFiles\TestLevel1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\ComponentData\ComponentData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\ComponentData\TraitData.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Component\" />
@@ -56,10 +60,12 @@
     <Folder Include="Event\" />
     <Folder Include="GameSystem\SystemTypes\" />
     <Folder Include="Event\EventTypes\" />
-    <Folder Include="Component\ComponentData\" />
     <Folder Include="Tests\" />
     <Folder Include="UserInterface\" />
     <Folder Include="Support\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\LevelFiles\" />
+    <Folder Include="Data\ComponentData\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Component\Component.cs" />
@@ -80,7 +86,6 @@
     <Compile Include="GameSystem\SystemTypes\MovementSystem.cs" />
     <Compile Include="GameSystem\SystemTypes\EntitySystem.cs" />
     <Compile Include="Component\Trait.cs" />
-    <Compile Include="Component\ComponentData\ECSDatabase.cs" />
     <Compile Include="GameSystem\SystemTypes\EntityFactory.cs" />
     <Compile Include="GameSystem\SystemTypes\ECSSerialisationData.cs" />
     <Compile Include="Tests\ComponentTests.cs" />
@@ -98,6 +103,8 @@
     <Compile Include="UserInterface\MenuConsole.cs" />
     <Compile Include="UserInterface\TextConsole.cs" />
     <Compile Include="Support\Palette.cs" />
+    <Compile Include="Data\ComponentData\ECSDatabase.cs" />
+    <Compile Include="Data\LevelFiles\LevelDatabase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

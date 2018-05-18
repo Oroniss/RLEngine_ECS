@@ -1,5 +1,3 @@
-// Revised for version 1.0.
-
 using System;
 using System.Collections.Generic;
 
@@ -11,6 +9,7 @@ namespace RLEngine.Components
 		readonly int _mapWidth;
 		readonly int _mapHeight;
 		readonly int[] _tileGrid;
+		bool[] _revealed;
 
 		public MapComponent(int entityId, int width, int height, int[] tileGrid)
 			:base(ComponentType.Map, entityId)
@@ -18,6 +17,7 @@ namespace RLEngine.Components
 			_mapWidth = width;
 			_mapHeight = height;
 			_tileGrid = new int[width * height];
+			_revealed = new bool[width * height];
 
 			for (int i = 0; i < width * height; i++)
 				_tileGrid[i] = tileGrid[i];
@@ -30,6 +30,7 @@ namespace RLEngine.Components
 			_mapHeight = GetIntParameter("MapHeight", otherParameters);
 
 			_tileGrid = new int[Width * Height];
+			_revealed = new bool[Width * Height];
 			var tileString = GetStringParameter("TileGrid", otherParameters).Split(',');
 			for (int i = 0; i < Width * Height; i++)
 				_tileGrid[i] = int.Parse(tileString[i]);
@@ -49,6 +50,18 @@ namespace RLEngine.Components
 		{
 			var index = ConvertXYToIndex(x, y);
 			return _tileGrid[index];
+		}
+
+		public bool IsRevealed(int x, int y)
+		{
+			var index = ConvertXYToIndex(x, y);
+			return _revealed[index];
+		}
+
+		public void RevealTile(int x, int y)
+		{
+			var index = ConvertXYToIndex(x, y);
+			_revealed[index] = true;
 		}
 
 		int ConvertXYToIndex(int x, int y)

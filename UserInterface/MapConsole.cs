@@ -29,11 +29,12 @@ namespace RLEngine.UserInterface
 			{
 				for (int x = xLimits.Min; x < xLimits.Max; x++)
 				{
-					//if (level.IsRevealed(x, y))
-					//{
-					//	_console.Set(x + xLimits.Offset, y + yLimits.Offset, null,
-					//				 Palette.GetColor(level.GetFogColor(x, y)), ' ');
-					//}
+					if (mapComponent.IsRevealed(x, y))
+					{
+						_console.Set(x + xLimits.Offset, y + yLimits.Offset, null,
+									 Palette.GetColor("White"), ' ');
+									 //Palette.GetColor(level.GetFogColor(x, y)), ' ');
+					}
 				}
 			}
 

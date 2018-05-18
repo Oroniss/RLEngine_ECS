@@ -12,8 +12,7 @@ namespace RLEngine.Testing
 		[Test]
 		public void TestSerialisation()
 		{
-			Components.ComponentData.ECSDatabase.SetParentFolder(System.IO.Path.Combine(
-				TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			Components.ComponentData.ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 
 			var paramDict1 = new Dictionary<string, string>
 			{

@@ -12,14 +12,14 @@ namespace RLEngine.Testing
 		[Test]
 		public void TestReadData()
 		{
-			ECSDatabase.SetParentFolder(Path.Combine(TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 			var data = ECSDatabase.GetComponentData("TestEntity1");
 		}
 
 		[Test]
 		public void TestComponentTypes()
 		{
-			ECSDatabase.SetParentFolder(Path.Combine(TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 
 			var entity1Data = ECSDatabase.GetComponentData("TestEntity1");
 			Assert.IsTrue(entity1Data.ContainsKey("ForegroundComponent"));
@@ -40,7 +40,7 @@ namespace RLEngine.Testing
 		[Test]
 		public void TestBackgroundComponentData()
 		{
-			ECSDatabase.SetParentFolder(Path.Combine(TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 
 			var entity1Data = ECSDatabase.GetComponentData("TestEntity4");
 			Assert.IsTrue(entity1Data.ContainsKey("BackgroundComponent"));
@@ -58,7 +58,7 @@ namespace RLEngine.Testing
 		[Test]
 		public void TestForegroundComponentData()
 		{
-			ECSDatabase.SetParentFolder(Path.Combine(TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 
 			var entity1Data = ECSDatabase.GetComponentData("TestEntity1");
 			Assert.IsTrue(entity1Data.ContainsKey("ForegroundComponent"));
@@ -75,7 +75,7 @@ namespace RLEngine.Testing
 		[Test]
 		public void TestTraitData()
 		{
-			ECSDatabase.SetParentFolder(Path.Combine(TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 
 			var entity1Traits = ECSDatabase.GetTraitData("TestEntity1");
 			Assert.IsTrue(entity1Traits.Contains(Components.Trait.BlockMove));
@@ -95,7 +95,7 @@ namespace RLEngine.Testing
 		{
 			// Intentionally not testing the bad file formats, since I don't think it's worth adding to the project for it.
 
-			ECSDatabase.SetParentFolder(Path.Combine(TestContext.CurrentContext.TestDirectory, "Component", "ComponentData"));
+			ECSDatabase.SetParentFolder(TestContext.CurrentContext.TestDirectory);
 			ErrorLogger.SetToTest();
 
 			var badEntityData = ECSDatabase.GetComponentData("Not an Entity!!!");

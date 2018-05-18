@@ -141,8 +141,8 @@ namespace RLEngine.Components.ComponentData
 		// Primarily here to set the test context for unit testing.
 		public static void SetParentFolder(string path)
 		{
-			_componentDataPath = Path.Combine(path, "ComponentData.csv");
-			_traitDataPath = Path.Combine(path, "TraitData.csv");
+			_componentDataPath = Path.Combine(path, "Data", "ComponentData", "ComponentData.csv");
+			_traitDataPath = Path.Combine(path, "Data", "ComponentData", "TraitData.csv");
 		}
 	}
 }
