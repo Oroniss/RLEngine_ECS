@@ -1,5 +1,3 @@
-// Revised for ECS version 1.0.
-
 using RLEngine.GameEvents;
 using RLEngine.Components;
 

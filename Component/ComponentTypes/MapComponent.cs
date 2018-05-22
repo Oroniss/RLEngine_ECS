@@ -36,6 +36,15 @@ namespace RLEngine.Components
 				_tileGrid[i] = int.Parse(tileString[i]);
 		}
 
+		public MapComponent(int entityId, Levels.LevelDetails levelDetails)
+			:base(ComponentType.Map, entityId)
+		{
+			_mapWidth = levelDetails.MapWidth;
+			_mapHeight = levelDetails.MapHeight;
+			_tileGrid = levelDetails.TileGrid;
+			_revealed = new bool[_mapWidth * _mapHeight];
+		}
+
 		public int Width
 		{
 			get { return _mapWidth; }

@@ -105,6 +105,8 @@
     <Compile Include="Support\Palette.cs" />
     <Compile Include="Data\ComponentData\ECSDatabase.cs" />
     <Compile Include="Data\LevelFiles\LevelDatabase.cs" />
+    <Compile Include="Event\EventTypes\CreateLevelEvent.cs" />
+    <Compile Include="Data\LevelFiles\LevelDetails.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
