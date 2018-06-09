@@ -107,6 +107,7 @@
     <Compile Include="Data\LevelFiles\LevelDatabase.cs" />
     <Compile Include="Event\EventTypes\CreateLevelEvent.cs" />
     <Compile Include="Data\LevelFiles\LevelDetails.cs" />
+    <Compile Include="GameSystem\SystemTypes\DrawingSystem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

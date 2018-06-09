@@ -12,31 +12,31 @@ namespace RLEngine
 		[Test]
 		public void TestBaseComponent()
 		{
-			var testComponent = new PositionComponent(0, 5, 5, "TestLevel1");
+			var testComponent = new PositionComponent(0, 5, 5, 100);
 			Assert.AreEqual(0, testComponent.EntityId);
 		}
 
 		[Test]
 		public void TestPositionComponent()
 		{
-			var testComponent1 = new PositionComponent(0, 5, 10, "TestLevel1");
+			var testComponent1 = new PositionComponent(0, 5, 10, 100);
 
 			Assert.AreEqual(5, testComponent1.XLoc);
 			Assert.AreEqual(10, testComponent1.YLoc);
-			Assert.AreEqual("TestLevel1", testComponent1.LevelName);
+			Assert.AreEqual(100, testComponent1.LevelId);
 			Assert.AreEqual(ComponentType.Position, testComponent1.componentType);
 
 			var paramDict = new Dictionary<string, string> {
 				{"EntityName", "TestEntity"},
 				{"XLoc", "5" },
 				{"YLoc", "10"},
-				{"LevelName", "TestLevel1"}};
+				{"LevelId", "100"}};
 
 			var testComponent2 = new PositionComponent(0, paramDict);
 
 			Assert.AreEqual(5, testComponent2.XLoc);
 			Assert.AreEqual(10, testComponent2.YLoc);
-			Assert.AreEqual("TestLevel1", testComponent2.LevelName);
+			Assert.AreEqual(100, testComponent2.LevelId);
 			Assert.AreEqual(ComponentType.Position, testComponent2.componentType);
 
 			testComponent2.UpdatePosition(7, 8);
@@ -139,7 +139,7 @@ namespace RLEngine
 			                ErrorLogger.GetNextMessage());
 			Assert.AreEqual("Parameter dictionary for TestEntity did not contain parameter name YLoc",
 							ErrorLogger.GetNextMessage());
-			Assert.AreEqual("Parameter dictionary for TestEntity did not contain parameter name LevelName",
+			Assert.AreEqual("Parameter dictionary for TestEntity did not contain parameter name LevelId",
 							ErrorLogger.GetNextMessage());
 		}
 	}

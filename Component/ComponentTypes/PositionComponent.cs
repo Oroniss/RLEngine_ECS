@@ -10,14 +10,14 @@ namespace RLEngine.Components
 	{
 		int _xLoc;
 		int _yLoc;
-		string _levelName;
+		int _levelId;
 
-		public PositionComponent(int entityId, int x, int y, string levelName)
+		public PositionComponent(int entityId, int x, int y, int levelId)
 			:base(ComponentType.Position, entityId)
 		{
 			_xLoc = x;
 			_yLoc = y;
-			_levelName = levelName;
+			_levelId = levelId;
 		}
 
 		public PositionComponent(int entityId, Dictionary<string, string> otherParameters)
@@ -25,7 +25,7 @@ namespace RLEngine.Components
 		{
 			_xLoc = GetIntParameter("XLoc", otherParameters);
 			_yLoc = GetIntParameter("YLoc", otherParameters);
-			_levelName = GetStringParameter("LevelName", otherParameters);
+			_levelId = GetIntParameter("LevelId", otherParameters);
 		}
 
 		public int XLoc
@@ -38,9 +38,9 @@ namespace RLEngine.Components
 			get { return _yLoc; }
 		}
 
-		public string LevelName
+		public int LevelId
 		{
-			get { return _levelName; }
+			get { return _levelId; }
 		}
 
 		public void UpdatePosition(int newX, int newY)

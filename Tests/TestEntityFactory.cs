@@ -26,7 +26,7 @@ namespace RLEngine.Testing
 			{
 				{"XLoc", "2"},
 				{"YLoc", "1"},
-				{"LevelName", "TestLevel1"}
+				{"LevelId", "101"}
 			};
 
 			var entityId1 = SystemProvider.EntitySystem.CreateEntity("TestEntity1", paramDict1);
@@ -42,7 +42,7 @@ namespace RLEngine.Testing
 
 			Assert.AreEqual(2, positionComponent.XLoc);
 			Assert.AreEqual(1, positionComponent.YLoc);
-			Assert.AreEqual("TestLevel1", positionComponent.LevelName);
+			Assert.AreEqual(101, positionComponent.LevelId);
 
 			var entityId2 = SystemProvider.EntitySystem.CreateEntity("TestEntity4", new Dictionary<string, string>());
 
@@ -55,7 +55,7 @@ namespace RLEngine.Testing
 				{"Material", "TestMaterial1"},
 				{"XLoc", "0"},
 				{"YLoc", "2"},
-				{"LevelName", "TestLevel1"}
+				{"LevelId", "201"}
 			};
 
 			var entityId3 = SystemProvider.EntitySystem.CreateEntity("TestEntity3", paramDict2);
