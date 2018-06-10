@@ -1,13 +1,63 @@
 ﻿15/5/18 - Started the initial version of the engine.
+16/5/18 - Added in the user interface and display classes.
+16/5/18 - Added a palette class.
+18/5/18 - Added a level database and the beginnings of a GenerateLevel method.
+20/5/18 - Added a CreateLevel event.
+20/5/18 - Working through the best way to create a new level without a flood of superfluous Create Entity events.
+22/5/18 - Added a Level details class to store a level template - can later be serialised to store them in a db.
+22/5/18 - Split entity construction into a few different pieces.
+22/5/18 - Reworked the level database to populate a level details instance for now.
+23/5/18 - Added the create level method - just generates the MapComponent at this stage.
+24/5/18 - Pulled down the colours for the Palette and started putting them in.
+26/5/18 - Added some more colours to the Palette.
+30/5/18 - Added some utility functions to the LevelSystem class.
+1/6/18 - Added some more utility functions to LevelSystem - Add entity, remove entity, has trait.
+3/6/18 - Added some more functions to LevelSystem - GetComponents.
+3/6/18 - Started building the DrawingSystem.
+4/6/18 - Added some basic drawing functions to the DrawingSystem.
+5/6/18 - Added recalculate background to Drawing System and started on Process events.
+7/6/18 - Added the rest of the Palette colors. Still needs some formatting.
+9/8/18 - Added the process event code to Drawing System.
+
+Too much of a pain in the arse.
 
 Pieces to Add:
 
+Fix up text console to accept a color.
+Fix up the rest of the Palette colors.
+
+Fix create level event to actually get stuff up and running now.
+Create a level and draw it.
+
+Fix up draw map.
+
+Fix up serialisation and deserialisation.
+
+Clean-up the code.
+Write a bunch  more unit tests.
+
+Version.
+
 User Interface
 Level + Map
+
+0.2 onwards.
+
 RNG
-Support - Geometry, Timer, Palette, etc.
+Support - Geometry, Timer, etc.
 FOV
 Pathfinding
 Entity creation and Destruction.
 Event processing and Log.
 Output text.
+Quest and achievement system.
+Conversations.
+Trade.
+Movement system.
+
+Things to track in GameSystems:
+
+LevelSystem - entity position.
+DrawingSystem - revealed, entity position, fgcomponent, bgcomponent.
+PathfindingSystem - blockMovement traits, dangerousMovement traits, possibly doors, etc.
+VisionSystem - lightSources, blockLos traits, lit tiles, maybe a visible tiles for each entity?
